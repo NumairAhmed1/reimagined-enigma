@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($name) OR !filter_var($email, FILTER_VALIDATE_EMAIL) OR empty($message)) {
         // Set a 400 (bad request) response code and exit.
         http_response_code(400);
-        echo "Please complete the form and try again.";
+        header('Location: error.html');
         exit;
     }
 
@@ -17,19 +17,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email_content = "Name: $name\n";
     $email_content .= "Email: $email\n\n";
     $email_content .= "Message:\n$message\n";
+
     $email_headers = "From: $name <$email>";
+    $email_headers .= "X-Sender: algorithminnovation.ltd <$recipient>\n";
+    $email_headers .= 'X-Mailer: PHP/' . phpversion();
+    $email_headers .= "X-Priority: 1\n"; // Urgent message!
+    $email_headers .= "Return-Path: $recipient\n"; // Return path for errors
+    $email_headers .= "MIME-Version: 1.0\r\n";
+    $email_headers .= "Content-Type: text/html; charset=iso-8859-1\n";
 
     if (mail($recipient, $subject, $email_content, $email_headers)) {
         http_response_code(200);
-        echo "Thank You! Your message has been sent.";
+        header('Location: thankyou.html');
     } else {
         http_response_code(500);
-        echo "Oops! Something went wrong and we couldn't send your message.";
+        header('Location: error.html');
     }
 
 } else {
     // Not a POST request, set a 403 (forbidden) response code.
     http_response_code(403);
-    echo "There was a problem with your submission, please try again.";
+    header('Location: error.html');
 }
 ?>
