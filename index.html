@@ -127,6 +127,73 @@
     </div>
 </section>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Section</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Additional styling to ensure FAQ answers are initially hidden */
+        .faq-answer {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- FAQ Section -->
+<section id="faq" class="py-20 bg-gray-100">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-semibold mb-4 text-center">FAQ on Software Development</h2>
+        <div class="space-y-3 max-w-2xl mx-auto">
+            <!-- FAQ Item -->
+            <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
+                <h3 class="text-xl font-semibold mb-2 cursor-pointer">How can custom software development benefit my business?</h3>
+                <p class="text-gray-500 faq-answer"> Custom software development allows businesses to have tailored solutions that precisely match their unique requirements and workflows. It can streamline processes, improve efficiency, enhance productivity, and provide a competitive edge in the market.</p>
+            </div>
+            <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
+                <h3 class="text-xl font-semibold mb-2 cursor-pointer">Can you develop mobile apps for both iOS and Android platforms?</h3>
+                <p class="text-gray-500 faq-answer"> Yes, our team of experienced developers is proficient in developing mobile applications for both iOS and Android platforms. We ensure that the apps are optimized for performance, user experience, and compatibility across different devices and operating systems.</p>
+            </div>
+            <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
+                <h3 class="text-xl font-semibold mb-2 cursor-pointer">What is DevOps, and how can it help improve software delivery?</h3>
+                <p class="text-gray-500 faq-answer"> DevOps is a set of practices that combines software development (Dev) and IT operations (Ops) to shorten the systems development life cycle and provide continuous delivery of high-quality software. By fostering collaboration, automation, and feedback loops, DevOps helps accelerate development cycles, improve deployment frequency, and enhance overall software quality and reliability</p>
+            </div>
+            <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
+                <h3 class="text-xl font-semibold mb-2 cursor-pointer">Do you offer discounts or packages for long-term maintenance contracts?</h3>
+                <p class="text-gray-500 faq-answer"> Yes, we offer discounts and customized packages for clients who opt for long-term maintenance contracts. These packages are designed to provide cost savings and added benefits for clients who commit to ongoing maintenance and support services.</p>
+            </div>
+            <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
+                <h3 class="text-xl font-semibold mb-2 cursor-pointer">Can you provide emergency support for critical issues outside of regular business hours?</h3>
+                <p class="text-gray-500 faq-answer">Yes, we offer emergency support services for critical issues outside of regular business hours. Our team is available to address urgent issues and ensure minimal disruption to your website's operations, even during evenings, weekends, and holidays. </p>
+            </div>
+            <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
+                <h3 class="text-xl font-semibold mb-2 cursor-pointer">How do you ensure the security and reliability of websites during maintenance and updates?</h3>
+                <p class="text-gray-500 faq-answer"> We follow best practices and industry standards to ensure the security and reliability of websites during maintenance and updates. Our team conducts thorough testing, implements security protocols, and takes precautionary measures to minimize risks and maintain website integrity throughout the maintenance process.</p>
+            </div>
+            <!-- Add more FAQ items as needed -->
+        </div>
+    </div>
+</section>
+
+<script>
+    // JavaScript to toggle FAQ answers on click
+    document.querySelectorAll('.faq-header').forEach(item => {
+        item.addEventListener('click', event => {
+            const answer = item.querySelector('.faq-answer');
+            const expanded = item.getAttribute('aria-expanded') === 'true';
+
+            item.setAttribute('aria-expanded', !expanded);
+            answer.style.display = expanded ? 'none' : 'block'; // Toggle display
+        });
+    });
+</script>
+
+</body>
+</html>
+
 <!-- Projects Section -->
 <section id="projects" class="py-20 bg-gray-100">
     <div class="container mx-auto text-center">
@@ -135,6 +202,7 @@
         <!-- Project examples would go here -->
     </div>
 </section>
+
 
 <!-- Contact Section -->
 <section id="contact" class="py-20" style="color: white; background-image: url('footer.webp'); background-size: cover; background-position: center;">
