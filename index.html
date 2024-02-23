@@ -81,6 +81,72 @@
         font-size: 1.25rem;
         cursor: pointer;
     }
+    .services .coming-soon-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black overlay */
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.5rem; /* match the border-radius of service cards */
+    }
+    .group:hover .service-card-overlay {
+        opacity: 0.75; /* Slightly reduce opacity on hover */
+        transition: opacity 0.3s ease;
+    }
+
+    .service-card-overlay {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.5rem; /* match the border-radius of service cards */
+        transition: opacity 0.3s ease;
+        opacity: 0; /* Start with a transparent overlay */
+    }
+
+    .service-card-overlay span {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+        transition: transform 0.3s ease;
+    }
+
+    .group:hover .service-card-overlay span {
+        transform: scale(1.1); /* Scale up the text slightly on hover */
+    }
+    .group:hover .service-card-overlay {
+        opacity: 0.75; /* Adjust opacity on hover */
+    }
+
+    .service-card-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for readability */
+        border-radius: 0.5rem; /* Match the border-radius of the cards */
+        opacity: 0; /* Start with the overlay hidden */
+        transition: opacity 0.3s ease;
+    }
+
+    .service-card-overlay span {
+        font-size: 1.5rem; /* Larger text size for visibility */
+        font-weight: bold;
+    }
+
+    .group:hover .service-card-overlay {
+        opacity: 1; /* Show the overlay on hover */
+    }
     </style>
 </head>
 <body class="font-sans antialiased text-gray-900">
@@ -159,29 +225,44 @@
             </div>
 
 	<!-- Cloud Computing Services -->
-            <div class="max-w-sm m-4 bg-white rounded-lg overflow-hidden shadow-lg">
-                <img class="w-full" src="istockphoto-1345778718-612x612.jpg" alt="Cloud Computing">
-                <div class="px-6 py-4">
-                    <h3 class="text-2xl font-semibold">Cloud Computing Services</h3>
-                    <p>Scalable cloud solutions for hosting, storage, and on-demand computing.</p>
-                </div>
+    <div class="relative max-w-sm m-4 group">
+        <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
+            <img class="w-full" src="istockphoto-1345778718-612x612.jpg" alt="Cloud Computing Services">
+            <div class="px-6 py-4">
+                <h3 class="text-2xl font-semibold">Cloud Computing Services</h3>
+                <p>Scalable cloud solutions for hosting, storage, and on-demand computing.</p>
             </div>
+        </div>
+        <div class="service-card-overlay">
+            <span>Coming Soon</span>
+        </div>
+    </div>
 
 	<!-- DevOps Services -->
-            <div class="max-w-sm m-4 bg-white rounded-lg overflow-hidden shadow-lg">
-                <img class="w-full" src="istockphoto-1352203098-612x612.jpg" alt="DevOps Services">
-                <div class="px-6 py-4">
-                    <h3 class="text-2xl font-semibold">DevOps Services</h3>
-                    <p>Enhancing software delivery through collaborative and efficient practices.</p>
-                </div>
+    <div class="relative max-w-sm m-4 group">
+        <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
+            <img class="w-full" src="istockphoto-1352203098-612x612.jpg" alt="DevOps Services">
+            <div class="px-6 py-4">
+                <h3 class="text-2xl font-semibold">DevOps Services</h3>
+                <p>Enhancing software delivery through collaborative and efficient practices.</p>
             </div>
+        </div>
+        <div class="service-card-overlay">
+            <span>Coming Soon</span>
+        </div>
+    </div>
 
             <!-- Service Box 3 -->
-            <div class="max-w-sm m-4 bg-white rounded-lg overflow-hidden shadow-lg">
-                <img class="w-full" src="photo3.jpg" alt="Service 2">
-                <div class="px-6 py-4">
-                    <h3 class="text-2xl font-semibold">IT Consulting</h3>
-                    <p>Offering expert advice to optimize your IT infrastructure and digital strategy.</p>
+            <div class="relative max-w-sm m-4 group">
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
+                    <img class="w-full" src="photo3.jpg" alt="IT Consulting">
+                    <div class="px-6 py-4">
+                        <h3 class="text-2xl font-semibold">IT Consulting</h3>
+                        <p>Offering expert advice to optimize your IT infrastructure and digital strategy.</p>
+                    </div>
+                </div>
+                <div class="service-card-overlay">
+                    <span>Coming Soon</span>
                 </div>
             </div>
         </div>
