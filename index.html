@@ -20,6 +20,67 @@
             border-radius: 0.5rem;
             max-width: 640px; /* Set a max-width for the content if desired */
         }
+        /* Modal styles */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.5s;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            position: relative;
+        }
+
+        .modal-show {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+        }
+        @media (max-width: 640px) {
+            .modal-content {
+                width: 90%;
+                padding: 1rem;
+            }
+        }
+    
+
+    .modal-content {
+        width: auto; /* Adjust width as necessary */
+        max-width: 600px; /* Max width can prevent the modal from becoming too wide on larger screens */
+    }
+
+    .modal-header {
+        border-bottom: 1px solid #e2e8f0; /* A light border to separate the header from the body */
+    }
+
+    
+
+    .modal-close {
+        background: none;
+        border: none;
+        font-size: 1.25rem;
+        cursor: pointer;
+    }
     </style>
 </head>
 <body class="font-sans antialiased text-gray-900">
@@ -234,6 +295,37 @@
         </div>
     </div>
 </section>
+ <!-- Modal -->
+<div id="estimateModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true" tabindex="-1">
+    <div class="modal-content shadow-lg rounded-lg overflow-hidden">
+        <div class="modal-header bg-white px-4 py-2 flex justify-between items-center">
+            <h2 id="modalTitle" class="font-bold text-xl">Would you like a free non-binding ballpark estimate for your project?</h2>
+            <button class="modal-close text-lg" aria-label="Close estimate form" onclick="closeModal()">×</button>
+        </div>
+        <div class="modal-body bg-gray-50 p-4">
+            <p>We can send it to you within 24 hours!</p>
+            <!-- Modal form -->
+<form id="estimateForm" action="https://formsubmit.co/Numair.Ahmed@algorithminnovation.ltd" method="POST" class="space-y-4 mt-4">
+    <!-- Hidden Input to handle form submissions on Formsubmit -->
+    <input type="hidden" name="_subject" value="New Estimate Request!">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://algorithminnovation.ltd">
+    <!-- Form fields with validation attributes -->
+    <textarea name="project_description" class="border-2 border-gray-300 p-2 w-full rounded-md" placeholder="Just describe your project needs here" required></textarea>
+    <input type="text" name="name" class="border-2 border-gray-300 p-2 w-full rounded-md" placeholder="Your name" required />
+    <input type="email" name="email" class="border-2 border-gray-300 p-2 w-full rounded-md" placeholder="E-mail" required />
+    <!-- GDPR Compliance Checkboxes -->
+    <div class="flex items-start mb-4">
+        <label class="flex items-center">
+            <input type="checkbox" name="gdpr_compliance" required class="rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50" />
+            <span class="ml-2 text-sm text-gray-600">I agree to have Algorithm Innovation contact me via email, phone, messengers.</span>
+        </label>
+    </div>
+    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full transition-colors duration-300 ease-in-out">Send</button>
+</form>
+        </div>
+    </div>
+</div>
 
 
 <!-- Footer -->
@@ -243,6 +335,72 @@
 </footer>
 
 <script src="main.js"></script>
+<script>
+    // Existing script elements
+        // ...
+
+        // Function to close the modal and restore focus to the opener
+        function closeModal() {
+            document.getElementById('estimateModal').classList.remove('modal-show');
+            // Restore focus to the element that opened the modal
+        }
+
+        // Function to validate the form
+        function validateForm() {
+            // Add custom validation logic if needed
+            return true; // Return false to prevent submission if invalid
+        }
+
+        // Script to handle keyboard navigation for accessibility
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+            // Handle focus trapping inside modal
+        });
+
+        // Show the modal on page load
+        window.onload = function() {
+            document.getElementById('estimateModal').classList.add('modal-show');
+            // Set initial focus to the modal for accessibility
+        };
+           // Opening the modal
+    function openModal() {
+        const modal = document.getElementById('estimateModal');
+        modal.classList.add('modal-show');
+        modal.classList.remove('modal-hide');
+        modal.querySelector('textarea').focus(); // Focus on the first form field
+    }
+
+    // Closing the modal
+    function closeModal() {
+        const modal = document.getElementById('estimateModal');
+        modal.classList.add('modal-hide');
+        modal.classList.remove('modal-show');
+        modal.addEventListener('animationend', function() {
+            // Reset animation classes after hide animation completes
+            modal.classList.remove('modal-hide');
+        });
+        document.querySelector('#openModalButton').focus(); // Focus back on the opener
+    }
+
+    // Handle ESC key to close the modal
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
+
+    // Prevent closing modal when clicking inside the content
+    document.querySelector('.modal-content').addEventListener('click', function(event) {
+        event.stopPropagation();
+    });
+
+    // Allow closing modal when clicking outside the content
+    document.querySelector('.modal').addEventListener('click', function(event) {
+        closeModal();
+    });
+</script>
 </body>
 </html>
 
