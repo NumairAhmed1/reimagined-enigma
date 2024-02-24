@@ -1,4 +1,13 @@
-window.addEventListener("load", (event) => {
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});window.addEventListener("load", (event) => {
     console.log("page is fully loaded");
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -49,4 +58,3 @@ function openModal() {
     modal.classList.remove('modal-hide');
     modal.querySelector('textarea').focus(); // Focus on the first form field
 }
-
