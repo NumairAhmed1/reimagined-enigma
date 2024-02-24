@@ -8,6 +8,7 @@
     <link rel="icon" href="icon.png" type="image/x-icon" />
     <link href="tailwind.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <script src="main.js" type="text/javascript"></script>
 </head>
 
 <body class="font-sans antialiased text-gray-900">
@@ -70,6 +71,7 @@
         <div class="container mx-auto text-center">
             <h2 class="text-4xl font-bold mb-4">Our Services</h2>
             <div class="flex justify-center flex-wrap">
+
                 <!-- Service Box 1 -->
                 <div class="max-w-sm m-4 bg-white rounded-lg overflow-hidden shadow-lg">
                     <img class="w-full" src="Photo1.jpg" alt="Service 1">
@@ -91,31 +93,33 @@
                 </div>
 
                 <!-- Mobile App Development -->
-                <div class="max-w-sm m-4 bg-white rounded-lg overflow-hidden shadow-lg">
-                    <img class="w-full" src="App-development-process-Feature-image.jpg" alt="Mobile App Development">
-                    <div class="px-6 py-4">
-                        <h3 class="text-2xl font-semibold">Mobile App Development</h3>
-                        <p>Designing engaging mobile experiences for iOS and Android platforms.</p>
+                <div class="relative max-w-sm m-4 group">
+                    <div class="max-w-sm m-4 bg-white rounded-lg overflow-hidden shadow-lg">
+                        <img class="w-full" src="App-development-process-Feature-image.jpg"
+                            alt="Mobile App Development">
+                        <div class="px-6 py-4">
+                            <h3 class="text-2xl font-semibold">Mobile App Development</h3>
+                            <p>Designing engaging mobile experiences for iOS and Android platforms.</p>
+                        </div>
                     </div>
+
+
                 </div>
 
                 <!-- Cloud Computing Services -->
-                <div class="relative max-w-sm m-4 group">
-                    <div
-                        class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
+                <div class="relative max-w-sm m-4 group coming-soon">
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform
+                        hover:scale-105">
                         <img class="w-full" src="istockphoto-1345778718-612x612.jpg" alt="Cloud Computing Services">
                         <div class="px-6 py-4">
                             <h3 class="text-2xl font-semibold">Cloud Computing Services</h3>
                             <p>Scalable cloud solutions for hosting, storage, and on-demand computing.</p>
                         </div>
                     </div>
-                    <div class="service-card-overlay">
-                        <span>Coming Soon</span>
-                    </div>
                 </div>
 
                 <!-- DevOps Services -->
-                <div class="relative max-w-sm m-4 group">
+                <div class="relative max-w-sm m-4 group coming-soon">
                     <div
                         class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
                         <img class="w-full" src="istockphoto-1352203098-612x612.jpg" alt="DevOps Services">
@@ -124,13 +128,10 @@
                             <p>Enhancing software delivery through collaborative and efficient practices.</p>
                         </div>
                     </div>
-                    <div class="service-card-overlay">
-                        <span>Coming Soon</span>
-                    </div>
                 </div>
 
                 <!-- Service Box 3 -->
-                <div class="relative max-w-sm m-4 group">
+                <div class="relative max-w-sm m-4 group coming-soon">
                     <div
                         class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
                         <img class="w-full" src="photo3.jpg" alt="IT Consulting">
@@ -139,119 +140,84 @@
                             <p>Offering expert advice to optimize your IT infrastructure and digital strategy.</p>
                         </div>
                     </div>
-                    <div class="service-card-overlay">
-                        <span>Coming Soon</span>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!DOCTYPE html>
-    <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>FAQ Section</title>
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-        <style>
-            /* Additional styling to ensure FAQ answers are initially hidden */
-            .faq-answer {
-                display: none;
-            }
-        </style>
-    </head>
-
-    <body>
-
-        <!-- FAQ Section -->
-        <section id="faq" class="py-20 bg-gray-100">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-semibold mb-4 text-center">FAQ on Software Development</h2>
-                <div class="space-y-3 max-w-2xl mx-auto">
-                    <!-- FAQ Item -->
-                    <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
-                        <h3 class="text-xl font-semibold mb-2 cursor-pointer">How can custom software development
-                            benefit my business?</h3>
-                        <p class="text-gray-500 faq-answer"> Custom software development allows businesses to have
-                            tailored solutions that precisely match their unique requirements and workflows. It can
-                            streamline processes, improve efficiency, enhance productivity, and provide a
-                            competitive
-                            edge in the market.</p>
-                    </div>
-                    <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
-                        <h3 class="text-xl font-semibold mb-2 cursor-pointer">Can you develop mobile apps for both
-                            iOS
-                            and Android platforms?</h3>
-                        <p class="text-gray-500 faq-answer"> Yes, our team of experienced developers is proficient
-                            in
-                            developing mobile applications for both iOS and Android platforms. We ensure that the
-                            apps
-                            are optimized for performance, user experience, and compatibility across different
-                            devices
-                            and operating systems.</p>
-                    </div>
-                    <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
-                        <h3 class="text-xl font-semibold mb-2 cursor-pointer">What is DevOps, and how can it help
-                            improve software delivery?</h3>
-                        <p class="text-gray-500 faq-answer"> DevOps is a set of practices that combines software
-                            development (Dev) and IT operations (Ops) to shorten the systems development life cycle
-                            and
-                            provide continuous delivery of high-quality software. By fostering collaboration,
-                            automation, and feedback loops, DevOps helps accelerate development cycles, improve
-                            deployment frequency, and enhance overall software quality and reliability</p>
-                    </div>
-                    <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
-                        <h3 class="text-xl font-semibold mb-2 cursor-pointer">Do you offer discounts or packages for
-                            long-term maintenance contracts?</h3>
-                        <p class="text-gray-500 faq-answer"> Yes, we offer discounts and customized packages for
-                            clients
-                            who opt for long-term maintenance contracts. These packages are designed to provide cost
-                            savings and added benefits for clients who commit to ongoing maintenance and support
-                            services.</p>
-                    </div>
-                    <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
-                        <h3 class="text-xl font-semibold mb-2 cursor-pointer">Can you provide emergency support for
-                            critical issues outside of regular business hours?</h3>
-                        <p class="text-gray-500 faq-answer">Yes, we offer emergency support services for critical
-                            issues
-                            outside of regular business hours. Our team is available to address urgent issues and
-                            ensure
-                            minimal disruption to your website's operations, even during evenings, weekends, and
-                            holidays. </p>
-                    </div>
-                    <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
-                        <h3 class="text-xl font-semibold mb-2 cursor-pointer">How do you ensure the security and
-                            reliability of websites during maintenance and updates?</h3>
-                        <p class="text-gray-500 faq-answer"> We follow best practices and industry standards to
-                            ensure
-                            the security and reliability of websites during maintenance and updates. Our team
-                            conducts
-                            thorough testing, implements security protocols, and takes precautionary measures to
-                            minimize risks and maintain website integrity throughout the maintenance process.</p>
-                    </div>
-                    <!-- Add more FAQ items as needed -->
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-gray-100">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-semibold mb-4 text-center">FAQ on Software Development</h2>
+            <div class="space-y-3 max-w-2xl mx-auto">
+                <!-- FAQ Item -->
+                <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
+                    <h3 class="text-xl font-semibold mb-2 cursor-pointer">How can custom software development
+                        benefit my business?</h3>
+                    <p class="text-gray-500 faq-answer"> Custom software development allows businesses to have
+                        tailored solutions that precisely match their unique requirements and workflows. It can
+                        streamline processes, improve efficiency, enhance productivity, and provide a
+                        competitive
+                        edge in the market.</p>
                 </div>
+                <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
+                    <h3 class="text-xl font-semibold mb-2 cursor-pointer">Can you develop mobile apps for both
+                        iOS
+                        and Android platforms?</h3>
+                    <p class="text-gray-500 faq-answer"> Yes, our team of experienced developers is proficient
+                        in
+                        developing mobile applications for both iOS and Android platforms. We ensure that the
+                        apps
+                        are optimized for performance, user experience, and compatibility across different
+                        devices
+                        and operating systems.</p>
+                </div>
+                <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
+                    <h3 class="text-xl font-semibold mb-2 cursor-pointer">What is DevOps, and how can it help
+                        improve software delivery?</h3>
+                    <p class="text-gray-500 faq-answer"> DevOps is a set of practices that combines software
+                        development (Dev) and IT operations (Ops) to shorten the systems development life cycle
+                        and
+                        provide continuous delivery of high-quality software. By fostering collaboration,
+                        automation, and feedback loops, DevOps helps accelerate development cycles, improve
+                        deployment frequency, and enhance overall software quality and reliability</p>
+                </div>
+                <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
+                    <h3 class="text-xl font-semibold mb-2 cursor-pointer">Do you offer discounts or packages for
+                        long-term maintenance contracts?</h3>
+                    <p class="text-gray-500 faq-answer"> Yes, we offer discounts and customized packages for
+                        clients
+                        who opt for long-term maintenance contracts. These packages are designed to provide cost
+                        savings and added benefits for clients who commit to ongoing maintenance and support
+                        services.</p>
+                </div>
+                <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
+                    <h3 class="text-xl font-semibold mb-2 cursor-pointer">Can you provide emergency support for
+                        critical issues outside of regular business hours?</h3>
+                    <p class="text-gray-500 faq-answer">Yes, we offer emergency support services for critical
+                        issues
+                        outside of regular business hours. Our team is available to address urgent issues and
+                        ensure
+                        minimal disruption to your website's operations, even during evenings, weekends, and
+                        holidays. </p>
+                </div>
+                <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
+                    <h3 class="text-xl font-semibold mb-2 cursor-pointer">How do you ensure the security and
+                        reliability of websites during maintenance and updates?</h3>
+                    <p class="text-gray-500 faq-answer"> We follow best practices and industry standards to
+                        ensure
+                        the security and reliability of websites during maintenance and updates. Our team
+                        conducts
+                        thorough testing, implements security protocols, and takes precautionary measures to
+                        minimize risks and maintain website integrity throughout the maintenance process.</p>
+                </div>
+                <!-- Add more FAQ items as needed -->
             </div>
-        </section>
+        </div>
+    </section>
 
-        <script>
-            // JavaScript to toggle FAQ answers on click
-            document.querySelectorAll('.faq-header').forEach(item => {
-                item.addEventListener('click', event => {
-                    const answer = item.querySelector('.faq-answer');
-                    const expanded = item.getAttribute('aria-expanded') === 'true';
 
-                    item.setAttribute('aria-expanded', !expanded);
-                    answer.style.display = expanded ? 'none' : 'block'; // Toggle display
-                });
-            });
-        </script>
-
-    </body>
-
-    </html>
 
     <!-- Projects Section -->
     <section id="projects" class="py-20 bg-gray-100">
@@ -351,102 +317,9 @@
         © 2024 Algorithm Innovation. All rights reserved.
         <a href="privacy_policy.html">Privacy Policy</a>
     </footer>
-
-    <script src="main.js"></script>
-    <script>
-        // Existing script elements
-        // ...
-        document.addEventListener('DOMContentLoaded', () => {
-            const navbarToggle = document.getElementById('navbarToggle');
-            const navbarLinks = document.getElementById('navbarLinks');
-
-            navbarToggle.addEventListener('click', () => {
-                navbarLinks.classList.toggle('hidden');
-            });
-
-            // Smooth scroll for links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-
-                    // Optional: Close navbar on click in mobile view
-                    navbarLinks.classList.add('hidden');
-                });
-            });
-
-            // Optional: Highlight active link (simplified version)
-            window.addEventListener('scroll', () => {
-                let current = '';
-                document.querySelectorAll('section').forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (pageYOffset >= sectionTop - 60) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                document.querySelectorAll('#navbarLinks a').forEach(a => {
-                    a.classList.remove('nav-link-active');
-                    if (a.href.includes(current)) {
-                        a.classList.add('nav-link-active');
-                    }
-                });
-            });
-        });
-
-        // Function to close the modal and restore focus to the opener
-        function closeModal() {
-            document.getElementById('estimateModal').classList.remove('modal-show');
-            // Restore focus to the element that opened the modal
-        }
-
-        // Function to validate the form
-        function validateForm() {
-            // Add custom validation logic if needed
-            return true; // Return false to prevent submission if invalid
-        }
-
-        // Script to handle keyboard navigation for accessibility
-        document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-            // Handle focus trapping inside modal
-        });
-
-        // Show the modal on page load
-        window.onload = function () {
-            document.getElementById('estimateModal').classList.add('modal-show');
-            // Set initial focus to the modal for accessibility
-        };
-        // Opening the modal
-        function openModal() {
-            const modal = document.getElementById('estimateModal');
-            modal.classList.add('modal-show');
-            modal.classList.remove('modal-hide');
-            modal.querySelector('textarea').focus(); // Focus on the first form field
-        }
-
-        // Closing the modal
-        function closeModal() {
-            const modal = document.getElementById('estimateModal');
-            modal.classList.add('modal-hide');
-            modal.classList.remove('modal-show');
-            modal.addEventListener('animationend', function () {
-                // Reset animation classes after hide animation completes
-                modal.classList.remove('modal-hide');
-            });
-            document.querySelector('#openModalButton').focus(); // Focus back on the opener
-        }
-
-        // Allow closing modal when clicking outside the content
-        document.querySelector('.modal').addEventListener('click', function (event) {
-            closeModal();
-        });
-
-    </script>
 </body>
+
+<script>
+</script>
 
 </html>
