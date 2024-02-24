@@ -31,10 +31,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.appendChild(soon)
     });
 
+     // JavaScript to toggle FAQ answers on click
+     document.querySelectorAll('.faq-header').forEach(item => {
+        item.addEventListener('click', event => {
+            const answer = item.querySelector('.faq-answer');
+            const expanded = item.getAttribute('aria-expanded') === 'true';
+
+            item.setAttribute('aria-expanded', !expanded);
+            answer.style.display = expanded ? 'none' : 'block'; // Toggle display
+        });
+    });
 
     openModal();
 
 });
+
+
+
+
 
 
 // Function to close the modal and restore focus to the opener

@@ -10,6 +10,11 @@
     overflow: hidden;
 }
 
+ /* Additional styling to ensure FAQ answers are initially hidden */
+ .faq-answer {
+    display: none;
+}
+
 #faq {
     -webkit-user-select: none;
     /* Safari */
