@@ -212,3 +212,30 @@
     color: #4a90e2;
     /* Or any color that fits your design */
 }
+
+
+.coming-soon:hover div {
+    /* filter: saturate(0) blur(3px); */
+    filter: saturate(0) blur(1px) brightness(0.5);
+
+}
+
+.coming-soon {
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.coming-soon-text {
+    display: none;
+    position: absolute;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.coming-soon:hover .coming-soon-text {
+    display: block;
+}
