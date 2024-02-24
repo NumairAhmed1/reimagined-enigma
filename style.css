@@ -1,0 +1,214 @@
+:root {
+    --primary-color: #007bff;
+    --hover-primary-color: #0056b3;
+    --text-color: #ffffff;
+}
+
+#home {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#faq {
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+
+}
+
+#home video.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+    object-fit: cover;
+}
+
+.background-video {
+    /* Existing styles */
+    object-fit: cover;
+    /* Ensure cover behavior across browsers */
+}
+
+.content {
+    position: relative;
+    color: var(--text-color);
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Improve readability */
+    border-radius: 8px;
+    /* Soften edges */
+    backdrop-filter: blur(10px);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-weight: bold;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+    background-color: var(--hover-primary-color);
+    text-decoration: none;
+}
+
+/* Modal styles */
+.modal {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.modal-show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 640px) {
+    .modal-content {
+        width: 90%;
+        padding: 1rem;
+    }
+}
+
+
+.modal-content {
+    width: auto;
+    /* Adjust width as necessary */
+    max-width: 600px;
+    /* Max width can prevent the modal from becoming too wide on larger screens */
+}
+
+.modal-header {
+    border-bottom: 1px solid #e2e8f0;
+    /* A light border to separate the header from the body */
+}
+
+
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.services .coming-soon-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* semi-transparent black overlay */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    /* match the border-radius of service cards */
+}
+
+.group:hover .service-card-overlay {
+    opacity: 0.75;
+    /* Slightly reduce opacity on hover */
+    transition: opacity 0.3s ease;
+}
+
+.service-card-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    /* match the border-radius of service cards */
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    /* Start with a transparent overlay */
+}
+
+.group:hover .service-card-overlay {
+    opacity: 1;
+    /* Show the overlay on hover */
+}
+
+/* Transition for the navbar toggle */
+#navbarLinks {
+    transition: all 0.3s ease;
+}
+
+/* Style for the active navigation link */
+.nav-link-active {
+    color: #4a90e2;
+    /* Or any color that fits your design */
+}
+
+/* Additional styles for the search bar to match the Tailwind theme */
+.search-container input[type="text"] {
+    border: 1px solid #555;
+    /* Slight border for the input */
+    color: white;
+    /* Text color */
+}
+
+.search-container button {
+    border: none;
+    /* Remove button border */
+    cursor: pointer;
+    /* Cursor indication for clickable button */
+}
+
+#navbarLinks {
+    transition: all 0.3s ease;
+}
+
+/* Style for the active navigation link */
+.nav-link-active {
+    color: #4a90e2;
+    /* Or any color that fits your design */
+}
