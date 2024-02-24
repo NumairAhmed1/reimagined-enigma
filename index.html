@@ -7,281 +7,7 @@
     <title>Algorithm Innovation</title>
     <link rel="icon" href="icon.png" type="image/x-icon" />
     <link href="tailwind.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #007bff;
-            --hover-primary-color: #0056b3;
-            --text-color: #ffffff;
-        }
-
-        #home {
-            position: relative;
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        #faq {
-            -webkit-user-select: none;
-            /* Safari */
-            -moz-user-select: none;
-            /* Firefox */
-            -ms-user-select: none;
-            /* IE10+/Edge */
-            user-select: none;
-            /* Standard */
-
-        }
-
-        #home video.background-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -1;
-            transform: translate(-50%, -50%);
-            background-size: cover;
-            object-fit: cover;
-        }
-
-        .background-video {
-            /* Existing styles */
-            object-fit: cover;
-            /* Ensure cover behavior across browsers */
-        }
-
-        .content {
-            position: relative;
-            color: var(--text-color);
-            padding: 2rem;
-            background-color: rgba(0, 0, 0, 0.5);
-            /* Improve readability */
-            border-radius: 8px;
-            /* Soften edges */
-            backdrop-filter: blur(10px);
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--text-color);
-            font-weight: bold;
-            padding: 1rem 2rem;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-        }
-
-        .cta-button:hover,
-        .cta-button:focus {
-            background-color: var(--hover-primary-color);
-            text-decoration: none;
-        }
-
-        /* Modal styles */
-        .modal {
-            position: fixed;
-            z-index: 1000;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            visibility: hidden;
-            opacity: 0;
-            transition: visibility 0s, opacity 0.5s;
-        }
-
-        .modal-content {
-            background: white;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .modal-show {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: transparent;
-            border: none;
-            font-size: 1.5rem;
-        }
-
-        @media (max-width: 640px) {
-            .modal-content {
-                width: 90%;
-                padding: 1rem;
-            }
-        }
-
-
-        .modal-content {
-            width: auto;
-            /* Adjust width as necessary */
-            max-width: 600px;
-            /* Max width can prevent the modal from becoming too wide on larger screens */
-        }
-
-        .modal-header {
-            border-bottom: 1px solid #e2e8f0;
-            /* A light border to separate the header from the body */
-        }
-
-
-
-        .modal-close {
-            background: none;
-            border: none;
-            font-size: 1.25rem;
-            cursor: pointer;
-        }
-
-        .services .coming-soon-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            /* semi-transparent black overlay */
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 0.5rem;
-            /* match the border-radius of service cards */
-        }
-
-        .group:hover .service-card-overlay {
-            opacity: 0.75;
-            /* Slightly reduce opacity on hover */
-            transition: opacity 0.3s ease;
-        }
-
-        .service-card-overlay {
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 0.5rem;
-            /* match the border-radius of service cards */
-            transition: opacity 0.3s ease;
-            opacity: 0;
-            /* Start with a transparent overlay */
-        }
-
-    .group:hover .service-card-overlay {
-        opacity: 1; /* Show the overlay on hover */
-    }
-    /* Transition for the navbar toggle */
-#navbarLinks {
-    transition: all 0.3s ease;
-}
-
-/* Style for the active navigation link */
-.nav-link-active {
-    color: #4a90e2; /* Or any color that fits your design */
-}
-/* Additional styles for the search bar to match the Tailwind theme */
-.search-container input[type="text"] {
-    border: 1px solid #555; /* Slight border for the input */
-    color: white; /* Text color */
-}
-
-.search-container button {
-    border: none; /* Remove button border */
-    cursor: pointer; /* Cursor indication for clickable button */
-}
-#navbarLinks {
-    transition: all 0.3s ease;
-}
-
-/* Style for the active navigation link */
-.nav-link-active {
-    color: #4a90e2; /* Or any color that fits your design */
-}
-    </style>
-</head>
-<body class="font-sans antialiased text-gray-900">
-
-
-<!-- Navigation -->
-<nav class="bg-gray-800 text-white p-4 sticky top-0 z-50">
-    <div class="container mx-auto flex justify-between items-center">
-        <a href="#home" class="font-bold">Algorithm Innovation</a>
-        <button id="navbarToggle" class="text-white md:hidden">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-        </button>
-        <div id="navbarLinks" class="hidden md:flex">
-            <a href="#about" class="px-4 hover:text-gray-300">About Us</a>
-            <a href="#services" class="px-4 hover:text-gray-300">Services</a>
-            <a href="#projects" class="px-4 hover:text-gray-300">Projects</a>
-            <a href="#contact" class="px-4 hover:text-gray-300">Contact</a>
-        </div>
-    </div>
-</nav>
-
-
-
-<!-- Home Section -->
-<section id="home" class="h-screen flex items-center justify-center text-center relative overflow-hidden">
-    <video autoplay muted loop playsinline class="background-video" poster="fallback-image.jpg">
-        <source src="Unlocking Innovation_ Data Driven Technology Solutions.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="content mx-auto z-10 text-white">
-        <h1 class="text-5xl font-bold">Empowering innovation through algorithms</h1>
-        <p class="mt-4"></p>
-        <div class="mt-8">
-            <a href="#contact" class="cta-button">Engage our services</a>
-        </div>
-    </div>
-</section>
-
-        .service-card-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            /* Semi-transparent overlay */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-            /* Text shadow for readability */
-            border-radius: 0.5rem;
-            /* Match the border-radius of the cards */
-            opacity: 0;
-            /* Start with the overlay hidden */
-            transition: opacity 0.3s ease;
-        }
-
-        .service-card-overlay span {
-            font-size: 1.5rem;
-            /* Larger text size for visibility */
-            font-weight: bold;
-        }
-
-        .group:hover .service-card-overlay {
-            opacity: 1;
-            /* Show the overlay on hover */
-        }
-    </style>
+    <link href="style.css" rel="stylesheet">
 </head>
 
 <body class="font-sans antialiased text-gray-900">
@@ -323,13 +49,16 @@
                     <img src="487528.jpg" alt="Innovative Solution" class="rounded-lg shadow-lg" />
                 </div>
                 <div>
-                    <p class="text-xl text-black mb-4">Discover the spirit of innovation that drives us to excel beyond
+                    <p class="text-xl text-black mb-4">Discover the spirit of innovation that drives us to excel
+                        beyond
                         the conventional boundaries of technology.</p>
                     <p class="text-black">At Algorithm Innovation, we are committed to harnessing the power of
-                        technology to create solutions that not only solve today's challenges but also anticipate the
+                        technology to create solutions that not only solve today's challenges but also anticipate
+                        the
                         needs of tomorrow. Our team thrives on creativity, dedication, and the relentless pursuit of
                         excellence.</p>
-                    <p class="text-black mt-4">Join us as we explore new horizons and build the future, one innovative
+                    <p class="text-black mt-4">Join us as we explore new horizons and build the future, one
+                        innovative
                         solution at a time.</p>
                 </div>
             </div>
@@ -355,7 +84,8 @@
                     <img class="w-full" src="Photo2.jpg" alt="Service 2">
                     <div class="px-6 py-4">
                         <h3 class="text-2xl font-semibold">Data Analysis & AI</h3>
-                        <p>Leveraging the power of data and AI to provide actionable insights and innovative solutions.
+                        <p>Leveraging the power of data and AI to provide actionable insights and innovative
+                            solutions.
                         </p>
                     </div>
                 </div>
@@ -446,22 +176,28 @@
                             benefit my business?</h3>
                         <p class="text-gray-500 faq-answer"> Custom software development allows businesses to have
                             tailored solutions that precisely match their unique requirements and workflows. It can
-                            streamline processes, improve efficiency, enhance productivity, and provide a competitive
+                            streamline processes, improve efficiency, enhance productivity, and provide a
+                            competitive
                             edge in the market.</p>
                     </div>
                     <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
-                        <h3 class="text-xl font-semibold mb-2 cursor-pointer">Can you develop mobile apps for both iOS
+                        <h3 class="text-xl font-semibold mb-2 cursor-pointer">Can you develop mobile apps for both
+                            iOS
                             and Android platforms?</h3>
-                        <p class="text-gray-500 faq-answer"> Yes, our team of experienced developers is proficient in
-                            developing mobile applications for both iOS and Android platforms. We ensure that the apps
-                            are optimized for performance, user experience, and compatibility across different devices
+                        <p class="text-gray-500 faq-answer"> Yes, our team of experienced developers is proficient
+                            in
+                            developing mobile applications for both iOS and Android platforms. We ensure that the
+                            apps
+                            are optimized for performance, user experience, and compatibility across different
+                            devices
                             and operating systems.</p>
                     </div>
                     <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
                         <h3 class="text-xl font-semibold mb-2 cursor-pointer">What is DevOps, and how can it help
                             improve software delivery?</h3>
                         <p class="text-gray-500 faq-answer"> DevOps is a set of practices that combines software
-                            development (Dev) and IT operations (Ops) to shorten the systems development life cycle and
+                            development (Dev) and IT operations (Ops) to shorten the systems development life cycle
+                            and
                             provide continuous delivery of high-quality software. By fostering collaboration,
                             automation, and feedback loops, DevOps helps accelerate development cycles, improve
                             deployment frequency, and enhance overall software quality and reliability</p>
@@ -469,7 +205,8 @@
                     <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
                         <h3 class="text-xl font-semibold mb-2 cursor-pointer">Do you offer discounts or packages for
                             long-term maintenance contracts?</h3>
-                        <p class="text-gray-500 faq-answer"> Yes, we offer discounts and customized packages for clients
+                        <p class="text-gray-500 faq-answer"> Yes, we offer discounts and customized packages for
+                            clients
                             who opt for long-term maintenance contracts. These packages are designed to provide cost
                             savings and added benefits for clients who commit to ongoing maintenance and support
                             services.</p>
@@ -477,16 +214,20 @@
                     <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
                         <h3 class="text-xl font-semibold mb-2 cursor-pointer">Can you provide emergency support for
                             critical issues outside of regular business hours?</h3>
-                        <p class="text-gray-500 faq-answer">Yes, we offer emergency support services for critical issues
-                            outside of regular business hours. Our team is available to address urgent issues and ensure
+                        <p class="text-gray-500 faq-answer">Yes, we offer emergency support services for critical
+                            issues
+                            outside of regular business hours. Our team is available to address urgent issues and
+                            ensure
                             minimal disruption to your website's operations, even during evenings, weekends, and
                             holidays. </p>
                     </div>
                     <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
                         <h3 class="text-xl font-semibold mb-2 cursor-pointer">How do you ensure the security and
                             reliability of websites during maintenance and updates?</h3>
-                        <p class="text-gray-500 faq-answer"> We follow best practices and industry standards to ensure
-                            the security and reliability of websites during maintenance and updates. Our team conducts
+                        <p class="text-gray-500 faq-answer"> We follow best practices and industry standards to
+                            ensure
+                            the security and reliability of websites during maintenance and updates. Our team
+                            conducts
                             thorough testing, implements security protocols, and takes precautionary measures to
                             minimize risks and maintain website integrity throughout the maintenance process.</p>
                     </div>
@@ -528,13 +269,15 @@
         <div class="container mx-auto px-6 text-center">
             <div class="bg-black bg-opacity-50 rounded-lg p-8" style="backdrop-filter: blur(10px);">
                 <h2 class="text-4xl font-bold mb-4">Contact Us</h2>
-                <p class="mb-8">Have a question or want to work together? Fill out the form below, and we'll get back to
+                <p class="mb-8">Have a question or want to work together? Fill out the form below, and we'll get
+                    back to
                     you as soon as possible.</p>
 
                 <!-- Elegant Contact Info Display -->
                 <div class="text-lg mb-8">
                     <p class="font-semibold">📞 Contact Number: <span class="font-light">+393513421349</span></p>
-                    <p class="font-semibold">🏠 Address: <span class="font-light">Bolzano, South Tyrol, Italy</span></p>
+                    <p class="font-semibold">🏠 Address: <span class="font-light">Bolzano, South Tyrol, Italy</span>
+                    </p>
                 </div>
 
                 <form action="https://formsubmit.co/Numair.Ahmed@algorithminnovation.ltd" method="POST"
@@ -564,7 +307,8 @@
     <div id="estimateModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true" tabindex="-1">
         <div class="modal-content shadow-lg rounded-lg overflow-hidden">
             <div class="modal-header bg-white px-4 py-2 flex justify-between items-center">
-                <h2 id="modalTitle" class="font-bold text-xl">Would you like a free non-binding ballpark estimate for
+                <h2 id="modalTitle" class="font-bold text-xl">Would you like a free non-binding ballpark estimate
+                    for
                     your project?</h2>
                 <button class="modal-close text-lg" aria-label="Close estimate form" onclick="closeModal()">×</button>
             </div>
@@ -589,7 +333,8 @@
                         <label class="flex items-center">
                             <input type="checkbox" name="gdpr_compliance" required
                                 class="rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50" />
-                            <span class="ml-2 text-sm text-gray-600">I agree to have Algorithm Innovation contact me via
+                            <span class="ml-2 text-sm text-gray-600">I agree to have Algorithm Innovation contact me
+                                via
                                 email, phone, messengers.</span>
                         </label>
                     </div>
@@ -612,45 +357,45 @@
         // Existing script elements
         // ...
         document.addEventListener('DOMContentLoaded', () => {
-    const navbarToggle = document.getElementById('navbarToggle');
-    const navbarLinks = document.getElementById('navbarLinks');
+            const navbarToggle = document.getElementById('navbarToggle');
+            const navbarLinks = document.getElementById('navbarLinks');
 
-    navbarToggle.addEventListener('click', () => {
-        navbarLinks.classList.toggle('hidden');
-    });
-
-    // Smooth scroll for links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
+            navbarToggle.addEventListener('click', () => {
+                navbarLinks.classList.toggle('hidden');
             });
 
-            // Optional: Close navbar on click in mobile view
-            navbarLinks.classList.add('hidden');
-        });
-    });
+            // Smooth scroll for links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
 
-    // Optional: Highlight active link (simplified version)
-    window.addEventListener('scroll', () => {
-        let current = '';
-        document.querySelectorAll('section').forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (pageYOffset >= sectionTop - 60) {
-                current = section.getAttribute('id');
-            }
+                    // Optional: Close navbar on click in mobile view
+                    navbarLinks.classList.add('hidden');
+                });
+            });
+
+            // Optional: Highlight active link (simplified version)
+            window.addEventListener('scroll', () => {
+                let current = '';
+                document.querySelectorAll('section').forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 60) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                document.querySelectorAll('#navbarLinks a').forEach(a => {
+                    a.classList.remove('nav-link-active');
+                    if (a.href.includes(current)) {
+                        a.classList.add('nav-link-active');
+                    }
+                });
+            });
         });
 
-        document.querySelectorAll('#navbarLinks a').forEach(a => {
-            a.classList.remove('nav-link-active');
-            if (a.href.includes(current)) {
-                a.classList.add('nav-link-active');
-            }
-        });
-    });
-});
-  
         // Function to close the modal and restore focus to the opener
         function closeModal() {
             document.getElementById('estimateModal').classList.remove('modal-show');
@@ -696,12 +441,12 @@
             document.querySelector('#openModalButton').focus(); // Focus back on the opener
         }
 
-    // Allow closing modal when clicking outside the content
-    document.querySelector('.modal').addEventListener('click', function(event) {
-        closeModal();
-    });
-    
-</script>
+        // Allow closing modal when clicking outside the content
+        document.querySelector('.modal').addEventListener('click', function (event) {
+            closeModal();
+        });
+
+    </script>
 </body>
 
 </html>
