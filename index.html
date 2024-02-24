@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,58 +9,78 @@
     <link href="tailwind.css" rel="stylesheet">
     <style>
         :root {
-    --primary-color: #007bff;
-    --hover-primary-color: #0056b3;
-    --text-color: #ffffff;
-}
+            --primary-color: #007bff;
+            --hover-primary-color: #0056b3;
+            --text-color: #ffffff;
+        }
+
         #home {
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-}
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
 
-#home video.background-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
-    transform: translate(-50%, -50%);
-    background-size: cover;
-    object-fit: cover;;
-}
-.background-video {
-    /* Existing styles */
-    object-fit: cover; /* Ensure cover behavior across browsers */
-}
+        #faq {
+            -webkit-user-select: none;
+            /* Safari */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* IE10+/Edge */
+            user-select: none;
+            /* Standard */
 
-.content {
-    position: relative;
-    color: var(--text-color);
-    padding: 2rem;
-    background-color: rgba(0, 0, 0, 0.5); /* Improve readability */
-    border-radius: 8px; /* Soften edges */
-}
+        }
 
-.cta-button {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    font-weight: bold;
-    padding: 1rem 2rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
+        #home video.background-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            background-size: cover;
+            object-fit: cover;
+        }
 
-.cta-button:hover, .cta-button:focus {
-    background-color: var(--hover-primary-color);
-    text-decoration: none;
-}
- /* Modal styles */
-.modal {
+        .background-video {
+            /* Existing styles */
+            object-fit: cover;
+            /* Ensure cover behavior across browsers */
+        }
+
+        .content {
+            position: relative;
+            color: var(--text-color);
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Improve readability */
+            border-radius: 8px;
+            /* Soften edges */
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            font-weight: bold;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            background-color: var(--hover-primary-color);
+            text-decoration: none;
+        }
+
+        /* Modal styles */
+        .modal {
             position: fixed;
             z-index: 1000;
             top: 0;
@@ -96,93 +117,70 @@
             border: none;
             font-size: 1.5rem;
         }
+
         @media (max-width: 640px) {
             .modal-content {
                 width: 90%;
                 padding: 1rem;
             }
         }
-    
 
-    .modal-content {
-        width: auto; /* Adjust width as necessary */
-        max-width: 600px; /* Max width can prevent the modal from becoming too wide on larger screens */
-    }
 
-    .modal-header {
-        border-bottom: 1px solid #e2e8f0; /* A light border to separate the header from the body */
-    }
+        .modal-content {
+            width: auto;
+            /* Adjust width as necessary */
+            max-width: 600px;
+            /* Max width can prevent the modal from becoming too wide on larger screens */
+        }
 
-    
+        .modal-header {
+            border-bottom: 1px solid #e2e8f0;
+            /* A light border to separate the header from the body */
+        }
 
-    .modal-close {
-        background: none;
-        border: none;
-        font-size: 1.25rem;
-        cursor: pointer;
-    }
-    .services .coming-soon-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black overlay */
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 0.5rem; /* match the border-radius of service cards */
-    }
-    .group:hover .service-card-overlay {
-        opacity: 0.75; /* Slightly reduce opacity on hover */
-        transition: opacity 0.3s ease;
-    }
 
-    .service-card-overlay {
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 0.5rem; /* match the border-radius of service cards */
-        transition: opacity 0.3s ease;
-        opacity: 0; /* Start with a transparent overlay */
-    }
 
-    .service-card-overlay span {
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
-        transition: transform 0.3s ease;
-    }
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
 
-    .group:hover .service-card-overlay span {
-        transform: scale(1.1); /* Scale up the text slightly on hover */
-    }
-    .group:hover .service-card-overlay {
-        opacity: 0.75; /* Adjust opacity on hover */
-    }
+        .services .coming-soon-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            /* semi-transparent black overlay */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+            /* match the border-radius of service cards */
+        }
 
-    .service-card-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for readability */
-        border-radius: 0.5rem; /* Match the border-radius of the cards */
-        opacity: 0; /* Start with the overlay hidden */
-        transition: opacity 0.3s ease;
-    }
+        .group:hover .service-card-overlay {
+            opacity: 0.75;
+            /* Slightly reduce opacity on hover */
+            transition: opacity 0.3s ease;
+        }
 
-    .service-card-overlay span {
-        font-size: 1.5rem; /* Larger text size for visibility */
-        font-weight: bold;
-    }
+        .service-card-overlay {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+            /* match the border-radius of service cards */
+            transition: opacity 0.3s ease;
+            opacity: 0;
+            /* Start with a transparent overlay */
+        }
 
     .group:hover .service-card-overlay {
         opacity: 1; /* Show the overlay on hover */
@@ -252,249 +250,366 @@
     </div>
 </section>
 
-<!-- About Us Section -->
-<section id="about" class="py-20 bg-white">
-    <div class="container mx-auto px-6">
-        <h2 class="text-5xl font-bold text-center text-black mb-8">About Us</h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div class="transition-transform transform hover:scale-105">
-                <img src="487528.jpg" alt="Innovative Solution" class="rounded-lg shadow-lg"/>
-            </div>
-            <div>
-                <p class="text-xl text-black mb-4">Discover the spirit of innovation that drives us to excel beyond the conventional boundaries of technology.</p>
-                <p class="text-black">At Algorithm Innovation, we are committed to harnessing the power of technology to create solutions that not only solve today's challenges but also anticipate the needs of tomorrow. Our team thrives on creativity, dedication, and the relentless pursuit of excellence.</p>
-                <p class="text-black mt-4">Join us as we explore new horizons and build the future, one innovative solution at a time.</p>
-            </div>
-        </div>
-    </div>
-</section>
+        .service-card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            /* Semi-transparent overlay */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            /* Text shadow for readability */
+            border-radius: 0.5rem;
+            /* Match the border-radius of the cards */
+            opacity: 0;
+            /* Start with the overlay hidden */
+            transition: opacity 0.3s ease;
+        }
 
-<!-- Services Section -->
-<section id="services" class="py-20">
-    <div class="container mx-auto text-center">
-        <h2 class="text-4xl font-bold mb-4">Our Services</h2>
-        <div class="flex justify-center flex-wrap">
-            <!-- Service Box 1 -->
-            <div class="max-w-sm m-4 bg-white rounded-lg overflow-hidden shadow-lg">
-                <img class="w-full" src="Photo1.jpg" alt="Service 1">
-                <div class="px-6 py-4">
-                    <h3 class="text-2xl font-semibold">Custom Software Development</h3>
-                    <p>Building tailored software solutions to meet your unique business needs.</p>
-                </div>
-            </div>
+        .service-card-overlay span {
+            font-size: 1.5rem;
+            /* Larger text size for visibility */
+            font-weight: bold;
+        }
 
-            <!-- Service Box 2 -->
-            <div class="max-w-sm m-4 bg-white rounded-lg overflow-hidden shadow-lg">
-                <img class="w-full" src="Photo2.jpg" alt="Service 2">
-                <div class="px-6 py-4">
-                    <h3 class="text-2xl font-semibold">Data Analysis & AI</h3>
-                    <p>Leveraging the power of data and AI to provide actionable insights and innovative solutions.</p>
-                </div>
-            </div>
-
-  	    <!-- Mobile App Development -->
-            <div class="max-w-sm m-4 bg-white rounded-lg overflow-hidden shadow-lg">
-                <img class="w-full" src="App-development-process-Feature-image.jpg" alt="Mobile App Development">
-                <div class="px-6 py-4">
-                    <h3 class="text-2xl font-semibold">Mobile App Development</h3>
-                    <p>Designing engaging mobile experiences for iOS and Android platforms.</p>
-                </div>
-            </div>
-
-	<!-- Cloud Computing Services -->
-    <div class="relative max-w-sm m-4 group">
-        <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
-            <img class="w-full" src="istockphoto-1345778718-612x612.jpg" alt="Cloud Computing Services">
-            <div class="px-6 py-4">
-                <h3 class="text-2xl font-semibold">Cloud Computing Services</h3>
-                <p>Scalable cloud solutions for hosting, storage, and on-demand computing.</p>
-            </div>
-        </div>
-        <div class="service-card-overlay">
-            <span>Coming Soon</span>
-        </div>
-    </div>
-
-	<!-- DevOps Services -->
-    <div class="relative max-w-sm m-4 group">
-        <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
-            <img class="w-full" src="istockphoto-1352203098-612x612.jpg" alt="DevOps Services">
-            <div class="px-6 py-4">
-                <h3 class="text-2xl font-semibold">DevOps Services</h3>
-                <p>Enhancing software delivery through collaborative and efficient practices.</p>
-            </div>
-        </div>
-        <div class="service-card-overlay">
-            <span>Coming Soon</span>
-        </div>
-    </div>
-
-            <!-- Service Box 3 -->
-            <div class="relative max-w-sm m-4 group">
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
-                    <img class="w-full" src="photo3.jpg" alt="IT Consulting">
-                    <div class="px-6 py-4">
-                        <h3 class="text-2xl font-semibold">IT Consulting</h3>
-                        <p>Offering expert advice to optimize your IT infrastructure and digital strategy.</p>
-                    </div>
-                </div>
-                <div class="service-card-overlay">
-                    <span>Coming Soon</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ Section</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        /* Additional styling to ensure FAQ answers are initially hidden */
-        .faq-answer {
-            display: none;
+        .group:hover .service-card-overlay {
+            opacity: 1;
+            /* Show the overlay on hover */
         }
     </style>
 </head>
-<body>
 
-<!-- FAQ Section -->
-<section id="faq" class="py-20 bg-gray-100">
-    <div class="container mx-auto">
-        <h2 class="text-3xl font-semibold mb-4 text-center">FAQ on Software Development</h2>
-        <div class="space-y-3 max-w-2xl mx-auto">
-            <!-- FAQ Item -->
-            <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
-                <h3 class="text-xl font-semibold mb-2 cursor-pointer">How can custom software development benefit my business?</h3>
-                <p class="text-gray-500 faq-answer"> Custom software development allows businesses to have tailored solutions that precisely match their unique requirements and workflows. It can streamline processes, improve efficiency, enhance productivity, and provide a competitive edge in the market.</p>
+<body class="font-sans antialiased text-gray-900">
+
+    <!-- Navigation -->
+    <nav class="bg-gray-800 text-white p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between">
+            <a href="#home" class="font-bold">Algorithm Innovation</a>
+            <div>
+                <a href="#about" class="px-4 hover:text-gray-300">About Us</a>
+                <a href="#services" class="px-4 hover:text-gray-300">Services</a>
+                <a href="#projects" class="px-4 hover:text-gray-300">Projects</a>
+                <a href="#contact" class="px-4 hover:text-gray-300">Contact</a>
             </div>
-            <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
-                <h3 class="text-xl font-semibold mb-2 cursor-pointer">Can you develop mobile apps for both iOS and Android platforms?</h3>
-                <p class="text-gray-500 faq-answer"> Yes, our team of experienced developers is proficient in developing mobile applications for both iOS and Android platforms. We ensure that the apps are optimized for performance, user experience, and compatibility across different devices and operating systems.</p>
-            </div>
-            <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
-                <h3 class="text-xl font-semibold mb-2 cursor-pointer">What is DevOps, and how can it help improve software delivery?</h3>
-                <p class="text-gray-500 faq-answer"> DevOps is a set of practices that combines software development (Dev) and IT operations (Ops) to shorten the systems development life cycle and provide continuous delivery of high-quality software. By fostering collaboration, automation, and feedback loops, DevOps helps accelerate development cycles, improve deployment frequency, and enhance overall software quality and reliability</p>
-            </div>
-            <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
-                <h3 class="text-xl font-semibold mb-2 cursor-pointer">Do you offer discounts or packages for long-term maintenance contracts?</h3>
-                <p class="text-gray-500 faq-answer"> Yes, we offer discounts and customized packages for clients who opt for long-term maintenance contracts. These packages are designed to provide cost savings and added benefits for clients who commit to ongoing maintenance and support services.</p>
-            </div>
-            <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
-                <h3 class="text-xl font-semibold mb-2 cursor-pointer">Can you provide emergency support for critical issues outside of regular business hours?</h3>
-                <p class="text-gray-500 faq-answer">Yes, we offer emergency support services for critical issues outside of regular business hours. Our team is available to address urgent issues and ensure minimal disruption to your website's operations, even during evenings, weekends, and holidays. </p>
-            </div>
-            <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
-                <h3 class="text-xl font-semibold mb-2 cursor-pointer">How do you ensure the security and reliability of websites during maintenance and updates?</h3>
-                <p class="text-gray-500 faq-answer"> We follow best practices and industry standards to ensure the security and reliability of websites during maintenance and updates. Our team conducts thorough testing, implements security protocols, and takes precautionary measures to minimize risks and maintain website integrity throughout the maintenance process.</p>
-            </div>
-            <!-- Add more FAQ items as needed -->
         </div>
-    </div>
-</section>
+    </nav>
 
-<script>
-    // JavaScript to toggle FAQ answers on click
-    document.querySelectorAll('.faq-header').forEach(item => {
-        item.addEventListener('click', event => {
-            const answer = item.querySelector('.faq-answer');
-            const expanded = item.getAttribute('aria-expanded') === 'true';
-
-            item.setAttribute('aria-expanded', !expanded);
-            answer.style.display = expanded ? 'none' : 'block'; // Toggle display
-        });
-    });
-</script>
-
-</body>
-</html>
-
-<!-- Projects Section -->
-<section id="projects" class="py-20 bg-gray-100">
-    <div class="container mx-auto text-center">
-        <h2 class="text-4xl font-bold mb-4">Our Projects</h2>
-        <p class="text-lg">Showcasing some of our innovative solutions that have transformed businesses.</p>
-        <!-- Project examples would go here -->
-    </div>
-</section>
-
-
-<!-- Contact Section -->
-<section id="contact" class="py-20" style="color: white; background-image: url('footer.webp'); background-size: cover; background-position: center;">
-    <div class="container mx-auto px-6 text-center">
-        <div class="bg-black bg-opacity-50 rounded-lg p-8">
-            <h2 class="text-4xl font-bold mb-4">Contact Us</h2>
-            <p class="mb-8">Have a question or want to work together? Fill out the form below, and we'll get back to you as soon as possible.</p>
-            
-            <!-- Elegant Contact Info Display -->
-            <div class="text-lg mb-8">
-                <p class="font-semibold">📞 Contact Number: <span class="font-light">+393513421349</span></p>
-                <p class="font-semibold">🏠 Address: <span class="font-light">Bolzano, South Tyrol, Italy</span></p>
+    <!-- Home Section -->
+    <section id="home" class="h-screen flex items-center justify-center text-center relative overflow-hidden">
+        <video autoplay muted loop playsinline class="background-video" poster="fallback-image.jpg">
+            <source src="Unlocking Innovation_ Data Driven Technology Solutions.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="content mx-auto z-10 text-white">
+            <h1 class="text-5xl font-bold">Empowering innovation through algorithms</h1>
+            <p class="mt-4"></p>
+            <div class="mt-8">
+                <a href="#contact" class="cta-button">Engage our services</a>
             </div>
+        </div>
+    </section>
 
-            <form action="https://formsubmit.co/Numair.Ahmed@algorithminnovation.ltd" method="POST" class="space-y-6">
-                <div>
-                    <input type="text" name="name" placeholder="Your Name" required class="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center text-black mb-8">About Us</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="transition-transform transform hover:scale-105">
+                    <img src="487528.jpg" alt="Innovative Solution" class="rounded-lg shadow-lg" />
                 </div>
                 <div>
-                    <input type="email" name="email" placeholder="Your Email" required class="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+                    <p class="text-xl text-black mb-4">Discover the spirit of innovation that drives us to excel beyond
+                        the conventional boundaries of technology.</p>
+                    <p class="text-black">At Algorithm Innovation, we are committed to harnessing the power of
+                        technology to create solutions that not only solve today's challenges but also anticipate the
+                        needs of tomorrow. Our team thrives on creativity, dedication, and the relentless pursuit of
+                        excellence.</p>
+                    <p class="text-black mt-4">Join us as we explore new horizons and build the future, one innovative
+                        solution at a time.</p>
                 </div>
-                <div>
-                    <textarea name="message" placeholder="Your Message" required class="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"></textarea>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4">Our Services</h2>
+            <div class="flex justify-center flex-wrap">
+                <!-- Service Box 1 -->
+                <div class="max-w-sm m-4 bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img class="w-full" src="Photo1.jpg" alt="Service 1">
+                    <div class="px-6 py-4">
+                        <h3 class="text-2xl font-semibold">Custom Software Development</h3>
+                        <p>Building tailored software solutions to meet your unique business needs.</p>
+                    </div>
                 </div>
-                <div>
-                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Send Message</button>
+
+                <!-- Service Box 2 -->
+                <div class="max-w-sm m-4 bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img class="w-full" src="Photo2.jpg" alt="Service 2">
+                    <div class="px-6 py-4">
+                        <h3 class="text-2xl font-semibold">Data Analysis & AI</h3>
+                        <p>Leveraging the power of data and AI to provide actionable insights and innovative solutions.
+                        </p>
+                    </div>
                 </div>
-            </form>
+
+                <!-- Mobile App Development -->
+                <div class="max-w-sm m-4 bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img class="w-full" src="App-development-process-Feature-image.jpg" alt="Mobile App Development">
+                    <div class="px-6 py-4">
+                        <h3 class="text-2xl font-semibold">Mobile App Development</h3>
+                        <p>Designing engaging mobile experiences for iOS and Android platforms.</p>
+                    </div>
+                </div>
+
+                <!-- Cloud Computing Services -->
+                <div class="relative max-w-sm m-4 group">
+                    <div
+                        class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
+                        <img class="w-full" src="istockphoto-1345778718-612x612.jpg" alt="Cloud Computing Services">
+                        <div class="px-6 py-4">
+                            <h3 class="text-2xl font-semibold">Cloud Computing Services</h3>
+                            <p>Scalable cloud solutions for hosting, storage, and on-demand computing.</p>
+                        </div>
+                    </div>
+                    <div class="service-card-overlay">
+                        <span>Coming Soon</span>
+                    </div>
+                </div>
+
+                <!-- DevOps Services -->
+                <div class="relative max-w-sm m-4 group">
+                    <div
+                        class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
+                        <img class="w-full" src="istockphoto-1352203098-612x612.jpg" alt="DevOps Services">
+                        <div class="px-6 py-4">
+                            <h3 class="text-2xl font-semibold">DevOps Services</h3>
+                            <p>Enhancing software delivery through collaborative and efficient practices.</p>
+                        </div>
+                    </div>
+                    <div class="service-card-overlay">
+                        <span>Coming Soon</span>
+                    </div>
+                </div>
+
+                <!-- Service Box 3 -->
+                <div class="relative max-w-sm m-4 group">
+                    <div
+                        class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
+                        <img class="w-full" src="photo3.jpg" alt="IT Consulting">
+                        <div class="px-6 py-4">
+                            <h3 class="text-2xl font-semibold">IT Consulting</h3>
+                            <p>Offering expert advice to optimize your IT infrastructure and digital strategy.</p>
+                        </div>
+                    </div>
+                    <div class="service-card-overlay">
+                        <span>Coming Soon</span>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
- <!-- Modal -->
-<div id="estimateModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true" tabindex="-1">
-    <div class="modal-content shadow-lg rounded-lg overflow-hidden">
-        <div class="modal-header bg-white px-4 py-2 flex justify-between items-center">
-            <h2 id="modalTitle" class="font-bold text-xl">Would you like a free non-binding ballpark estimate for your project?</h2>
-            <button class="modal-close text-lg" aria-label="Close estimate form" onclick="closeModal()">×</button>
+    </section>
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FAQ Section</title>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <style>
+            /* Additional styling to ensure FAQ answers are initially hidden */
+            .faq-answer {
+                display: none;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 bg-gray-100">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-semibold mb-4 text-center">FAQ on Software Development</h2>
+                <div class="space-y-3 max-w-2xl mx-auto">
+                    <!-- FAQ Item -->
+                    <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
+                        <h3 class="text-xl font-semibold mb-2 cursor-pointer">How can custom software development
+                            benefit my business?</h3>
+                        <p class="text-gray-500 faq-answer"> Custom software development allows businesses to have
+                            tailored solutions that precisely match their unique requirements and workflows. It can
+                            streamline processes, improve efficiency, enhance productivity, and provide a competitive
+                            edge in the market.</p>
+                    </div>
+                    <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
+                        <h3 class="text-xl font-semibold mb-2 cursor-pointer">Can you develop mobile apps for both iOS
+                            and Android platforms?</h3>
+                        <p class="text-gray-500 faq-answer"> Yes, our team of experienced developers is proficient in
+                            developing mobile applications for both iOS and Android platforms. We ensure that the apps
+                            are optimized for performance, user experience, and compatibility across different devices
+                            and operating systems.</p>
+                    </div>
+                    <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
+                        <h3 class="text-xl font-semibold mb-2 cursor-pointer">What is DevOps, and how can it help
+                            improve software delivery?</h3>
+                        <p class="text-gray-500 faq-answer"> DevOps is a set of practices that combines software
+                            development (Dev) and IT operations (Ops) to shorten the systems development life cycle and
+                            provide continuous delivery of high-quality software. By fostering collaboration,
+                            automation, and feedback loops, DevOps helps accelerate development cycles, improve
+                            deployment frequency, and enhance overall software quality and reliability</p>
+                    </div>
+                    <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
+                        <h3 class="text-xl font-semibold mb-2 cursor-pointer">Do you offer discounts or packages for
+                            long-term maintenance contracts?</h3>
+                        <p class="text-gray-500 faq-answer"> Yes, we offer discounts and customized packages for clients
+                            who opt for long-term maintenance contracts. These packages are designed to provide cost
+                            savings and added benefits for clients who commit to ongoing maintenance and support
+                            services.</p>
+                    </div>
+                    <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
+                        <h3 class="text-xl font-semibold mb-2 cursor-pointer">Can you provide emergency support for
+                            critical issues outside of regular business hours?</h3>
+                        <p class="text-gray-500 faq-answer">Yes, we offer emergency support services for critical issues
+                            outside of regular business hours. Our team is available to address urgent issues and ensure
+                            minimal disruption to your website's operations, even during evenings, weekends, and
+                            holidays. </p>
+                    </div>
+                    <div class="bg-white p-6 shadow rounded faq-header" aria-expanded="false">
+                        <h3 class="text-xl font-semibold mb-2 cursor-pointer">How do you ensure the security and
+                            reliability of websites during maintenance and updates?</h3>
+                        <p class="text-gray-500 faq-answer"> We follow best practices and industry standards to ensure
+                            the security and reliability of websites during maintenance and updates. Our team conducts
+                            thorough testing, implements security protocols, and takes precautionary measures to
+                            minimize risks and maintain website integrity throughout the maintenance process.</p>
+                    </div>
+                    <!-- Add more FAQ items as needed -->
+                </div>
+            </div>
+        </section>
+
+        <script>
+            // JavaScript to toggle FAQ answers on click
+            document.querySelectorAll('.faq-header').forEach(item => {
+                item.addEventListener('click', event => {
+                    const answer = item.querySelector('.faq-answer');
+                    const expanded = item.getAttribute('aria-expanded') === 'true';
+
+                    item.setAttribute('aria-expanded', !expanded);
+                    answer.style.display = expanded ? 'none' : 'block'; // Toggle display
+                });
+            });
+        </script>
+
+    </body>
+
+    </html>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4">Our Projects</h2>
+            <p class="text-lg">Showcasing some of our innovative solutions that have transformed businesses.</p>
+            <!-- Project examples would go here -->
         </div>
-        <div class="modal-body bg-gray-50 p-4">
-            <p>We can send it to you within 24 hours!</p>
-            <!-- Modal form -->
-<form id="estimateForm" action="https://formsubmit.co/Numair.Ahmed@algorithminnovation.ltd" method="POST" class="space-y-4 mt-4">
-    <!-- Hidden Input to handle form submissions on Formsubmit -->
-    <input type="hidden" name="_subject" value="New Estimate Request!">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_next" value="https://algorithminnovation.ltd">
-    <!-- Form fields with validation attributes -->
-    <textarea name="project_description" class="border-2 border-gray-300 p-2 w-full rounded-md" placeholder="Just describe your project needs here" required></textarea>
-    <input type="text" name="name" class="border-2 border-gray-300 p-2 w-full rounded-md" placeholder="Your name" required />
-    <input type="email" name="email" class="border-2 border-gray-300 p-2 w-full rounded-md" placeholder="E-mail" required />
-    <!-- GDPR Compliance Checkboxes -->
-    <div class="flex items-start mb-4">
-        <label class="flex items-center">
-            <input type="checkbox" name="gdpr_compliance" required class="rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50" />
-            <span class="ml-2 text-sm text-gray-600">I agree to have Algorithm Innovation contact me via email, phone, messengers.</span>
-        </label>
-    </div>
-    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full transition-colors duration-300 ease-in-out">Send</button>
-</form>
-        </div>
-    </div>
-</div>
+    </section>
 
 
-<!-- Footer -->
-<footer class="bg-gray-800 text-white text-center p-4">
-    © 2024 Algorithm Innovation. All rights reserved.
-    <a href="privacy_policy.html">Privacy Policy</a>
-</footer>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20"
+        style="color: white; background-image: url('footer.webp'); background-size: cover; background-position: center;">
+        <div class="container mx-auto px-6 text-center">
+            <div class="bg-black bg-opacity-50 rounded-lg p-8" style="backdrop-filter: blur(10px);">
+                <h2 class="text-4xl font-bold mb-4">Contact Us</h2>
+                <p class="mb-8">Have a question or want to work together? Fill out the form below, and we'll get back to
+                    you as soon as possible.</p>
 
-<script src="main.js"></script>
-<script>
-    // Existing script elements
+                <!-- Elegant Contact Info Display -->
+                <div class="text-lg mb-8">
+                    <p class="font-semibold">📞 Contact Number: <span class="font-light">+393513421349</span></p>
+                    <p class="font-semibold">🏠 Address: <span class="font-light">Bolzano, South Tyrol, Italy</span></p>
+                </div>
+
+                <form action="https://formsubmit.co/Numair.Ahmed@algorithminnovation.ltd" method="POST"
+                    class="space-y-6">
+                    <div>
+                        <input type="text" name="name" placeholder="Your Name" required
+                            class="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+                    </div>
+                    <div>
+                        <input type="email" name="email" placeholder="Your Email" required
+                            class="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+                    </div>
+                    <div>
+                        <textarea name="message" placeholder="Your Message" required
+                            class="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit"
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Send
+                            Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Modal -->
+    <div id="estimateModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true" tabindex="-1">
+        <div class="modal-content shadow-lg rounded-lg overflow-hidden">
+            <div class="modal-header bg-white px-4 py-2 flex justify-between items-center">
+                <h2 id="modalTitle" class="font-bold text-xl">Would you like a free non-binding ballpark estimate for
+                    your project?</h2>
+                <button class="modal-close text-lg" aria-label="Close estimate form" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body bg-gray-50 p-4">
+                <p>We can send it to you within 24 hours!</p>
+                <!-- Modal form -->
+                <form id="estimateForm" action="https://formsubmit.co/Numair.Ahmed@algorithminnovation.ltd"
+                    method="POST" class="space-y-4 mt-4">
+                    <!-- Hidden Input to handle form submissions on Formsubmit -->
+                    <input type="hidden" name="_subject" value="New Estimate Request!">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://algorithminnovation.ltd">
+                    <!-- Form fields with validation attributes -->
+                    <textarea name="project_description" class="border-2 border-gray-300 p-2 w-full rounded-md"
+                        placeholder="Just describe your project needs here" required></textarea>
+                    <input type="text" name="name" class="border-2 border-gray-300 p-2 w-full rounded-md"
+                        placeholder="Your name" required />
+                    <input type="email" name="email" class="border-2 border-gray-300 p-2 w-full rounded-md"
+                        placeholder="E-mail" required />
+                    <!-- GDPR Compliance Checkboxes -->
+                    <div class="flex items-start mb-4">
+                        <label class="flex items-center">
+                            <input type="checkbox" name="gdpr_compliance" required
+                                class="rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50" />
+                            <span class="ml-2 text-sm text-gray-600">I agree to have Algorithm Innovation contact me via
+                                email, phone, messengers.</span>
+                        </label>
+                    </div>
+                    <button type="submit"
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full transition-colors duration-300 ease-in-out">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center p-4">
+        © 2024 Algorithm Innovation. All rights reserved.
+        <a href="privacy_policy.html">Privacy Policy</a>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Existing script elements
         // ...
         document.addEventListener('DOMContentLoaded', () => {
     const navbarToggle = document.getElementById('navbarToggle');
@@ -549,7 +664,7 @@
         }
 
         // Script to handle keyboard navigation for accessibility
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             if (event.key === 'Escape') {
                 closeModal();
             }
@@ -557,41 +672,29 @@
         });
 
         // Show the modal on page load
-        window.onload = function() {
+        window.onload = function () {
             document.getElementById('estimateModal').classList.add('modal-show');
             // Set initial focus to the modal for accessibility
         };
-           // Opening the modal
-    function openModal() {
-        const modal = document.getElementById('estimateModal');
-        modal.classList.add('modal-show');
-        modal.classList.remove('modal-hide');
-        modal.querySelector('textarea').focus(); // Focus on the first form field
-    }
-
-    // Closing the modal
-    function closeModal() {
-        const modal = document.getElementById('estimateModal');
-        modal.classList.add('modal-hide');
-        modal.classList.remove('modal-show');
-        modal.addEventListener('animationend', function() {
-            // Reset animation classes after hide animation completes
+        // Opening the modal
+        function openModal() {
+            const modal = document.getElementById('estimateModal');
+            modal.classList.add('modal-show');
             modal.classList.remove('modal-hide');
-        });
-        document.querySelector('#openModalButton').focus(); // Focus back on the opener
-    }
-
-    // Handle ESC key to close the modal
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-            closeModal();
+            modal.querySelector('textarea').focus(); // Focus on the first form field
         }
-    });
 
-    // Prevent closing modal when clicking inside the content
-    document.querySelector('.modal-content').addEventListener('click', function(event) {
-        event.stopPropagation();
-    });
+        // Closing the modal
+        function closeModal() {
+            const modal = document.getElementById('estimateModal');
+            modal.classList.add('modal-hide');
+            modal.classList.remove('modal-show');
+            modal.addEventListener('animationend', function () {
+                // Reset animation classes after hide animation completes
+                modal.classList.remove('modal-hide');
+            });
+            document.querySelector('#openModalButton').focus(); // Focus back on the opener
+        }
 
     // Allow closing modal when clicking outside the content
     document.querySelector('.modal').addEventListener('click', function(event) {
@@ -600,5 +703,5 @@
     
 </script>
 </body>
-</html>
 
+</html>
