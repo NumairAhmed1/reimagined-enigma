@@ -72,3 +72,28 @@ function openModal() {
     modal.classList.remove('modal-hide');
     modal.querySelector('textarea').focus(); // Focus on the first form field
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.querySelector('.toggle-button');
+    const navbarLinks = document.querySelector('.navbar-links');
+
+    toggleButton.addEventListener('click', () => {
+        navbarLinks.classList.toggle('active');
+    });
+});
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('.navbar');
+    if (window.scrollY > 100) { // Adjust based on your needs
+        nav.classList.add('active-nav');
+    } else {
+        nav.classList.remove('active-nav');
+    }
+});
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if(window.scrollY > 100) { // Adjust this value based on your needs
+        navbar.classList.add('active-nav');
+    } else {
+        navbar.classList.remove('active-nav');
+    }
+});
+

@@ -244,3 +244,118 @@
 .coming-soon:hover .coming-soon-text {
     display: block;
 }
+/* Reset margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+.brand-title {
+    font-size: 1.5rem;
+}
+
+.navbar-links ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar-links li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.navbar-links li a {
+    transition: color 0.3s ease;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-links li a:hover {
+    color: #0088a9;
+}
+
+/* Hamburger menu */
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .navbar-links ul li a {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}
+.navbar-links li a {
+    position: relative;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.navbar-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #4a90e2;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-links li a:hover::after {
+    visibility: visible;
+    width: 100%;
+}
+.navbar.active-nav {
+    background-color: rgba(0, 0, 0, 0.); /* Or any color */
+}
