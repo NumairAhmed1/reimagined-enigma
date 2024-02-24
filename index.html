@@ -7,22 +7,61 @@
     <link rel="icon" href="icon.png" type="image/x-icon" />
     <link href="tailwind.css" rel="stylesheet">
     <style>
+        :root {
+    --primary-color: #007bff;
+    --hover-primary-color: #0056b3;
+    --text-color: #ffffff;
+}
         #home {
-            background-image: url('coding-desk-thumb.jpg');
-            background-size: cover;
-            background-position: center;
-        }
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
 
-        #home .content {
-            backdrop-filter: blur(5px);
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 0.5rem;
-            max-width: 640px; /* Set a max-width for the content if desired */
-        }
-        /* Modal styles */
-        .modal {
+#home video.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+    object-fit: cover;;
+}
+.background-video {
+    /* Existing styles */
+    object-fit: cover; /* Ensure cover behavior across browsers */
+}
+
+.content {
+    position: relative;
+    color: var(--text-color);
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.5); /* Improve readability */
+    border-radius: 8px; /* Soften edges */
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-weight: bold;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover, .cta-button:focus {
+    background-color: var(--hover-primary-color);
+    text-decoration: none;
+}
+ /* Modal styles */
+.modal {
             position: fixed;
+            z-index: 1000;
             top: 0;
             left: 0;
             width: 100%;
@@ -41,6 +80,7 @@
             padding: 2rem;
             border-radius: 0.5rem;
             position: relative;
+            z-index: 2;
         }
 
         .modal-show {
@@ -165,12 +205,16 @@
 </nav>
 
 <!-- Home Section -->
-<section id="home" class="h-screen flex items-center justify-center text-center">
-    <div class="content mx-auto">
-        <h1 class="text-5xl font-bold text-white">Empowering innovation through algorithms</h1>
-        <p class="text-white mt-4">Algorithm Innovation stands at the intersection of innovation and customization, delivering top-tier website and software development services.</p>
+<section id="home" class="h-screen flex items-center justify-center text-center relative overflow-hidden">
+    <video autoplay muted loop playsinline class="background-video" poster="fallback-image.jpg">
+        <source src="Unlocking Innovation_ Data Driven Technology Solutions.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="content mx-auto z-10 text-white">
+        <h1 class="text-5xl font-bold">Empowering innovation through algorithms</h1>
+        <p class="mt-4"></p>
         <div class="mt-8">
-            <a href="#contact" class="inline-block bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition-colors">Engage our services</a>
+            <a href="#contact" class="cta-button">Engage our services</a>
         </div>
     </div>
 </section>
