@@ -359,3 +359,31 @@
 .navbar.active-nav {
     background-color: rgba(0, 0, 0, 0.); /* Or any color */
 }
+.carousel-container {
+    position: relative;
+}
+
+.carousel-image {
+    width: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: white;
+    border: none;
+    background-color: rgba(0,0,0,0.5);
+    padding: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
