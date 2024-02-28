@@ -97,22 +97,34 @@ window.addEventListener('scroll', function() {
     }
 });
 
-let slideIndex = 0;
-showSlides();
+document.addEventListener('DOMContentLoaded', function() {
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-img');
+    const totalSlides = slides.length;
 
-function showSlides() {
-    let i;
-    let slides = document.getElementsByClassName("carousel-image");
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
+    function showSlide(index) {
+        // Hide all slides
+        slides.forEach(slide => {
+            slide.style.display = 'none';
+        });
+
+        // Show the specified slide
+        slides[index].style.display = 'block';
     }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}    
-    slides[slideIndex-1].style.display = "block";  
-    setTimeout(showSlides, 5000); // Change image every 2 seconds
-}
 
-function changeSlide(n) {
-    slideIndex += n-1;
-    showSlides();
-}
+    document.querySelector('.next').addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default anchor behavior
+        currentSlide = (currentSlide + 1) % totalSlides; // Move to the next slide
+        showSlide(currentSlide);
+    });
+
+    document.querySelector('.prev').addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default anchor behavior
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; // Move to the previous slide
+        showSlide(currentSlide);
+    });
+
+    // Initially display the first slide
+    showSlide(currentSlide);
+});
+

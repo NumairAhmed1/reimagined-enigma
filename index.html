@@ -54,14 +54,20 @@
     <div class="container mx-auto px-4">
         <h2 class="text-4xl font-semibold text-center text-gray-800 mb-12">About Us</h2>
         <div class="flex flex-wrap lg:flex-nowrap justify-center items-center gap-10">
-            <div class="w-full lg:w-1/2 xl:w-5/12 carousel-container relative">
-                <img class="carousel-image rounded-xl shadow-xl mx-auto" src="DALLE2024-02-2710.18.47-VisualizeamodernsoftwarecompanysAboutUspagefeaturingadiverseteamofprofessionalscollaboratingaroundalargesleekglasstableina-ezgif.com-webp-to-jpg-converter.jpg " alt="Team Collaboration" />
-                <img class="carousel-image rounded-xl shadow-xl mx-auto hidden" src="DALLE2024-02-2710.24.32-Createaninspiringimagethatencapsulatestheconceptofinnovativeprojects.Thesceneissetinafuturisticlaboratorywithtransparentholograph-ezgif.com-webp-to-jpg-converter.jpg" alt="Innovative Projects" />
-                <img class="carousel-image rounded-xl shadow-xl mx-auto hidden" src="DALLE2024-02-2710.27.03-Designanimagethatembodiesthethemeofcreativesolutionsfeaturingalightbulbfilledwithvariouscolorfulgearssymbolsofcreativitylike-ezgif.com-webp-to-jpg-converter.jpg" alt="Creative Solutions" />
-                <button class="prev absolute left-0 top-1/2 bg-gray-800 text-white p-2" onclick="changeSlide(-1)">&#10094;</button>
-                <button class="next absolute right-0 top-1/2 bg-gray-800 text-white p-2" onclick="changeSlide(1)">&#10095;</button>
+            <div class="carousel w-full lg:w-1/2 xl:w-5/12 mx-auto relative">
+                <!-- Slides -->
+                <div class="carousel-slides">
+                <img src="DALLE2024-02-2710.18.47-VisualizeamodernsoftwarecompanysAboutUspagefeaturingadiverseteamofprofessionalscollaboratingaroundalargesleekglasstableina-ezgif.com-webp-to-jpg-converter.jpg" alt="Team Collaboration" class="carousel-img" >
+                <img src="DALLE2024-02-2710.24.32-Createaninspiringimagethatencapsulatestheconceptofinnovativeprojects.Thesceneissetinafuturisticlaboratorywithtransparentholograph-ezgif.com-webp-to-jpg-converter.jpg" alt="Innovative Projects" class="carousel-img" >
+                <img src="DALLE2024-02-2710.27.03-Designanimagethatembodiesthethemeofcreativesolutionsfeaturingalightbulbfilledwithvariouscolorfulgearssymbolsofcreativitylike-ezgif.com-webp-to-jpg-converter.jpg" alt="Creative Solutions" class="carousel-img" >
             </div>
-            <div class="lg:w-1/2 p-4">
+            <!-- Manual navigation -->
+            <div class="carousel-navigation">
+                <a href="#" class="prev">&#10094;</a>
+                <a href="#" class="next">&#10095;</a>
+            </div>
+        </div>
+        <div class="lg:w-1/2 p-4">
                 <p class="text-base sm:text-lg text-gray-600 mb-4">Welcome to Algorithm Innovation. We're pioneers in the tech industry, driven by a passion to exceed the limits of today's technology and innovate for a better tomorrow.</p>
                 <p class="text-gray-600 mb-4">Our team is at the heart of our success. United by creativity and a quest for excellence, we tackle challenges head-on and turn them into opportunities for growth and innovation.</p>
                 <p class="text-gray-600">We believe in the power of technology to transform lives. That's why we're dedicated to developing solutions that are not only effective but also sustainable and forward-thinking. Join us on this exciting journey towards creating a brighter future together.</p>

@@ -359,31 +359,40 @@
 .navbar.active-nav {
     background-color: rgba(0, 0, 0, 0.); /* Or any color */
 }
-.carousel-container {
-    position: relative;
-}
 
-.carousel-image {
+.carousel-slides {
+    display: flex;
     width: 100%;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.hidden {
-    display: none;
-}
-
-.prev, .next {
-    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .carousel-img {
+    max-width: 100%;
+    display: none; /* Hide images by default */
+  }
+  
+  /* Show the first image */
+  .carousel-img:first-child {
+    display: block;
+  }
+  
+  .carousel-navigation a {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 24px;
     color: white;
-    border: none;
+    font-size: 24px;
     background-color: rgba(0,0,0,0.5);
     padding: 10px;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-}
+    text-decoration: none;
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  }
+  
+  
