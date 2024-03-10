@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile App Development Services</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        body { 
+            margin: 0; 
+            font-family: Arial, sans-serif; 
+            background: #011627; 
+            color: #fff; 
+            overflow: hidden;
+        }
+        .content, .modal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 100;
+        }
+        .modal {
+            background: rgba(0, 0, 0, 0.85);
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+            width: 50%;
+            max-width: 600px;
+            z-index: 101;
+        }
+        .modal.active {
+            display: block;
+        }
+        .close-btn {
+            float: right;
+            color: #fff;
+            cursor: pointer;
+        }
+        .input-field {
+            color: #000;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            width: calc(100% - 20px);
+            box-sizing: border-box;
+        }
+        .cta-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .cta-button:hover { 
+            background-color: #0056b3; 
+            transform: translateY(-2px);
+        }
+        .form-step {
+            display: none;
+        }
+        .form-step.active {
+            display: block;
+        }
+        .form-navigation {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <h2>Mobile App Development</h2>
+    <p>Engage with the future of mobile experiences. Our innovative development process creates apps that captivate, engage, and exceed user expectations.</p>
+    <button class="cta-button" id="openModal">Get Started</button>
+    <a href="/" class="cta-button">Back to Home</a>
+</div>
+
+<div class="modal" id="modal">
+    <span class="close-btn" id="closeModal">&times;</span>
+    <form id="multiStepForm" action="https://formsubmit.co/Numair.Ahmed@algorithminnovation.ltd" method="POST">
+        <div class="form-step active" id="step1">
+            <input type="text" name="name" placeholder="Your Name" required class="input-field"><br>
+            <div class="form-navigation">
+                <button type="button" class="cta-button" onclick="showStep(2)">Next</button>
+            </div>
+        </div>
+        <div class="form-step" id="step2">
+            <input type="email" name="email" placeholder="Your Email" required class="input-field"><br>
+            <div class="form-navigation">
+                <button type="button" class="cta-button" onclick="showStep(1)">Back</button>
+                <button type="button" class="cta-button" onclick="showStep(3)">Next</button>
+            </div>
+        </div>
+        <div class="form-step" id="step3">
+            <textarea name="message" placeholder="Describe your project idea" required class="input-field"></textarea><br>
+            <input type="hidden" name="_next" value="algorithminnovation.ltd">
+            <div class="form-navigation">
+                <button type="button" class="cta-button" onclick="showStep(2)">Back</button>
+                <button type="submit" class="cta-button">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    var renderer = new THREE.WebGLRenderer({ alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    var particles = new THREE.Group();
+    scene.add(particles);
+    
+    var particleGeometry = new THREE.SphereGeometry(0.1, 32, 32);
+    var particleMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+
+    for (let i = 0; i < 500; i++) {
+        var particle = new THREE.Mesh(particleGeometry, particleMaterial);
+        particle.position.set((Math.random() - 0.5) * 50, (Math.random() - 0.5) * 50, (Math.random() - 0.5) * 50);
+        particles.add(particle);
+    }
+
+    camera.position.z = 30;
+
+    document.addEventListener('mousemove', onDocumentMouseMove);
+    let mouseX = 0, mouseY = 0;
+
+    function onDocumentMouseMove(event) {
+        mouseX = (event.clientX - window.innerWidth / 2) * 0.05;
+        mouseY = (event.clientY - window.innerHeight / 2) * 0.05;
+    }
+
+    function animate() {
+        requestAnimationFrame(animate);
+
+        particles.rotation.x += 0.001;
+        particles.rotation.y += 0.001;
+
+        camera.position.x += (mouseX - camera.position.x) * 0.05;
+        camera.position.y += (-mouseY - camera.position.y) * 0.05;
+        camera.lookAt(scene.position);
+
+        renderer.render(scene, camera);
+    }
+
+    animate();
+    document.getElementById('openModal').addEventListener('click', function() {
+        document.getElementById('modal').classList.add('active');
+    });
+
+    document.getElementById('closeModal').addEventListener('click', function() {
+        document.getElementById('modal').classList.remove('active');
+    });
+
+    function showStep(step) {
+        var steps = document.querySelectorAll('.form-step');
+        steps.forEach(function(el) { el.classList.remove('active'); });
+        document.getElementById('step' + step).classList.add('active');
+    }
+</script>
+</body>
+</html>

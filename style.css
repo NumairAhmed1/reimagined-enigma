@@ -528,3 +528,34 @@
 .neon-button:hover {
     color: #011627;
 }
+.projects-section {
+    background: #011627; /* Dark background for a futuristic look */
+    color: #fff; /* White text for contrast */
+    padding: 50px 0;
+}
+
+.project-placeholder {
+    border: 2px solid #0ea5e9; /* Bright border color */
+    border-radius: 15px;
+    padding: 50px 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.05); /* Subtle background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    transition: transform 0.3s ease-in-out, background 0.3s ease;
+}
+
+.project-placeholder:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    background: rgba(255, 255, 255, 0.1); /* Slightly brighter background on hover */
+}
+
+@keyframes glowing {
+    0% { border-color: #0ea5e9; }
+    50% { border-color: #0ff; }
+    100% { border-color: #0ea5e9; }
+}
+
+.glowing-effect {
+    animation: glowing 2s infinite; /* Continuous glowing effect */
+}
