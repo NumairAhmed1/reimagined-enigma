@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Sticky NavBar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h3>Algorithm Innovation</h3>
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li><a class="navbar-link" href="index.html">Home</a></li>
+          <li><a class="navbar-link" href="about.html">About</a></li>        
+          <li><a class="navbar-link" href="services.html">Services</a></li>
+          <li><a class="navbar-link" href="projects.html">Programs & Projects</a></li>
+          <li><a class="navbar-link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-navbar-btn">
+        <ion-icon nname="menu-outline" class="mobile-nav-icon"></ion-icon>
+        <ion-icon name="close-outline" class="mobile-nav-icon"></ion-icon>
+      </div>
+    </header> 
+
+  
+     
+   <!-- Moto Section -->
+   <section>
+    <div>
+      <div style="margin-bottom: -155px; padding-bottom: 150px;"></div>
+    </div>
+</section>
+   <section class="motosection">
+    <div class="motoheadline">
+    <h1 id="mainsections">Why Choose Us</h1>
+    <div id="sectionborder"></div>
+  </div>
+   <div class="moto-main-container">
+     <div class="row">
+      <div class="col-md-6" id="motoimage">
+        <img src="https://img.freepik.com/free-vector/tiny-people-analyst-observing-workers-performance-tablet-performance-rating-employee-work-measurement-work-efficiency-feedback-concept_335657-873.jpg?size=626&ext=jpg&uid=R73534188&ga=GA1.2.1092271943.1664946166&semt=robertav1_2_sidr">
+      </div>
+    
+      <div class="col-md-6" id="moto-text-container">
+        <h1>Customer Support is Our Main Priority</h1>
+        <p>
+          We strive for transparency in our cost and timeline estimates and will work closely with you to align expectations with your budget and schedule requirements.</p>
+                </div>
+
+        <ul id="moto-featurs">
+          <div id="list-features">
+          <li> <i class="fa-sharp fa-solid fa-circle-check"></i>  Customer Service</li>
+          <li> <i class="fa-sharp fa-solid fa-circle-check"></i> Quality Service</li>
+        </div>
+         <div list-features>  
+          <li><i class="fa-sharp fa-solid fa-circle-check"></i> Competitive Pricing</li>
+          <li> <i class="fa-sharp fa-solid fa-circle-check"></i> Timely delivery</li>
+        </div>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+    <!-- our product section --> 
+    <h2 id="mainsections">Our Projects</h2>
+    <div id="sectionborder"></div>
+    
+    <div class="column-products product-container wow zoomIn">
+        <div class="product-card">
+            <a href="#" aria-label="Learn more about future projects"> <!-- Placeholder link and accessibility label added -->
+                <div class="card w-223">
+                    <img src="images/future-proj.jpeg" alt="Future Projects Coming Soon">
+                    <div class="product-body">
+                        <p class="card-text">Future Projects Coming Soon</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+  
+
+
+</div>
+<div id="estimateModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true" tabindex="-1">
+  <div class="modal-content shadow-lg rounded-lg overflow-hidden">
+      <div class="modal-header bg-white px-4 py-2 flex justify-between items-center">
+          <h2 id="modalTitle" class="font-bold text-xl">Would you like a free non-binding ballpark estimate
+              for
+              your project?</h2>
+          <button class="modal-close text-lg" aria-label="Close estimate form" onclick="closeModal()">×</button>
+      </div>
+      <div class="modal-body bg-gray-50 p-4">
+          <p>We can send it to you within 24 hours!</p>
+          <!-- Modal form -->
+          <form id="estimateForm" action="https://formsubmit.co/Numair.Ahmed@algorithminnovation.ltd"
+              method="POST" class="space-y-4 mt-4">
+              <!-- Hidden Input to handle form submissions on Formsubmit -->
+              <input type="hidden" name="_subject" value="New Estimate Request!">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_next" value="https://algorithminnovation.ltd">
+              <!-- Form fields with validation attributes -->
+              <textarea name="project_description" class="border-2 border-gray-300 p-2 w-full rounded-md"
+                  placeholder="Just describe your project needs here" required></textarea>
+              <input type="text" name="name" class="border-2 border-gray-300 p-2 w-full rounded-md"
+                  placeholder="Your name" required />
+              <input type="email" name="email" class="border-2 border-gray-300 p-2 w-full rounded-md"
+                  placeholder="E-mail" required />
+                  <div class="flex items-start mb-4">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="gdpr_compliance" required
+                            class="rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50" />
+                        <span class="ml-2 text-sm text-gray-600">I agree to have Algorithm Innovation contact me
+                            via
+                            email, phone, messengers.</span>
+                    </label>
+                </div>
+                <button type="submit"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full transition-colors duration-300 ease-in-out">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<footer>
+  <div class="content">
+    <div class="top">
+      <div class="logo-details">
+        <i class="fab fa-slack"></i>
+        <span class="logo_name">Algorithm Innovation</span>
+      </div>
+      <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    
+      </div>
+    </div>
+    <div class="link-boxes">
+      <div class="box-3beez">
+        <h2 style="font-size: 23px; font-weight: 400;">Algorithm Innovation</h2>
+        <p>We are innovators in digital transformation, leveraging the latest technologies to create custom solutions that propel businesses forward.</p>
+      </div>
+      <ul class="box">
+        <li class="link_name">Links</li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact.html">Get started</a></li>
+      </ul>
+      <ul class="box">
+        <li class="link_name">Services</li>
+        <li><a href="services.html">Software Development</a></li>
+        <li><a href="services.html">Mobile App Development</a></li>
+        <li><a href="services.html">Data Analysis & AI</a></li>
+      </ul>
+
+      <ul class="box" id="footer-contact">
+        <li class="link_name"> <span  >Contact Us</span></li>
+        <li><i class="fas fa-envelope"></i> Numair.Ahmed@algorithminnovation.ltd</li>
+        <li><i class="fas fa-phone"></i> +393513421349</li>
+        <li><i class="fas fa-map-marker-alt"></i> Bolzano, South Tyrol, Italy
+        </li>
+      </ul>
+     
+    
+    </div>
+  </div>
+  <div class="bottom-details">
+    <div class="bottom_text">
+      <span class="copyright_text">Copyright © 2024 <a href="#">Algorithm Innovation.</a>All rights reserved</span>
+      <span class="policy_terms">
+        <a href="privacy_policy.html">Privacy policy</a>
+        <a href="#">Terms & condition</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+    
+<script src="script.js"></script>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>
+</html>
+
+
+
+
