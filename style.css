@@ -193,14 +193,14 @@ body{
 } */
 
 
-.section-main{
+/* .section-main{
   position: relative;
   top: 55px;
   bottom: 55px;
   margin-bottom: 44px;
   max-width: 100%;
   min-height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.87), rgba(2, 5, 34, 0.795)), url("https://img.freepik.com/free-photo/rear-view-programmer-working-all-night-long_1098-18697.jpg?size=626&ext=jpg&uid=R73534188&ga=GA1.2.1092271943.1664946166&semt=robertav1_2_sidr");
+  background: linear-gradient(rgba(0, 0, 0, 0.87), rgba(2, 5, 34, 0.795)), url("https://img.freepik.com/free-photo/rear-view-programmer-working-all-night-long_1098-18697.jpg?size=626&ext=jpg&uid=R73534188&ga=GA1.2.1092271943.1664946166&semt=robertav1_2_sidr"); 
   background-size: cover;
   background-position: center;
   display: flex;
@@ -208,7 +208,44 @@ body{
   align-items: center;
   padding: 20px 100px;
 
+} */
+.section-main {
+  position: relative;
+  top: 55px;
+  bottom: 55px;
+  margin-bottom: 44px;
+  max-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 100px;
+  overflow: hidden; /* Prevents video from overflowing the section */
 }
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the entire section area */
+  z-index: -1; /* Ensures text is above the video */
+}
+
+/* Add back the linear gradient over the video if desired */
+.section-main:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.87), rgba(2, 5, 34, 0.795));
+  z-index: 0; /* Overlay between video and text */
+}
+
+/* Ensure your other styles for .text-main and children remain unchanged */
 
 
 .section-main .text-main{
@@ -250,7 +287,7 @@ max-width: 900px;
   background-color: #0c3e68;
   padding: 10px;
  border-radius: 8px;
- color: #fff;
+ color: rgb(255, 255, 255);
  display: flex;
  border: 1px solid #fff;
 margin: auto;
@@ -490,10 +527,64 @@ justify-content: center;
 
 }
 
-.crewcard-body{
+/* .crewcard-body{
   height: 40px;
   background-color: #0d3a61;;
   color: white;
+} */
+
+.services-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.service-image img {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+
+.service-info {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.service-info h3 {
+  color: #0c3e68;
+  font-weight: bold;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.service-info p {
+  color: #364fc7;
+  font-size: 15px;
+}
+.card h2 {
+  text-decoration: none; /* This will ensure no underline is present */
+}
+
+@media (max-width: 768px) {
+  .services-container {
+      grid-template-columns: 1fr;
+  }
+
+  .service-image, .service-info {
+      max-width: 100%;
+  }
 }
 
 
@@ -573,59 +664,105 @@ padding-left: 22px;
  right: 42px;
 }
 
-/* product card styling */
-.product-container{
+/* Projects Container to Grid Layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Creates a responsive grid */
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Center cards within the container */
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Center cards within the container */
+}
+
+/* Project Card Styling */
+.project-card {
+  background: #ffffff; /* Explicit white color */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  overflow: hidden;
+  margin: 20px auto; /* Center cards horizontally */
+  transition: transform 0.3s ease; /* Smooth lift effect on hover */
+}
+
+.project-card:hover {
+  transform: translateY(-5px); /* Elevate card on hover */
+}
+
+.project-card img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Cover the card area fully */
+}
+
+.project-body {
+  padding: 15px;
+  text-align: center; /* Center-align text */
+}
+
+.project-body h3 {
+  color: #0c3e68; /* Heading color for contrast */
+  margin: 10px 0; /* Margin for spacing */
+  font-size: 20px; /* Slightly larger font size */
+}
+
+.project-body p {
+  font-size: 16px;
+  color: #000000; /* Black color for paragraph text */
+  line-height: 1.5; /* Enhanced readability */
+}
+
+/* Product Section Styling */
+.product-section {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-
-}
-.centered-heading {
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px; 
+  padding: 20px;
+  gap: 20px; /* Space between image and info */
 }
 
-.product-card{
-  flex: 1 4px 33.33%;
-  padding: 8px;
-  box-sizing: border-box;
-}
-.product-card a{
- text-decoration: none;
-}
-.p-card {
-  width: 300px;
-  height: 400px;
-  margin: 20px;
-  margin-top: 45px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.192);
-}
-
-.product-card img{
-height: 90%;
-}
-
-.product-body{
-  text-align: center;
-  height: 15%;
-  margin: auto;
+.product-image img {
   width: 100%;
-  background-color: #2271b1;
- 
+  max-width: 600px; /* Optimal width for images */
+  height: auto;
+  border-radius: 10px; /* Softened edges */
 }
-.product-body p{
-  font-size: 19px;
-  text-align: center;
-  margin: auto;
-  width: 100%;
-  color: white;
-  position: relative;  
-  top: 10px;
+
+.product-info {
+  flex: 1;
+  max-width: 600px; /* Matching max width for consistency */
 }
+
+.product-info h3 {
+  margin-bottom: 10px;
+  color: #0c3e68; /* Color consistency across headings */
+  font-size: 24px; /* Prominent heading size */
+}
+
+.product-info p {
+  font-size: 16px;
+  color: #000000; /* Ensuring paragraph visibility */
+  line-height: 1.5; /* For better text flow */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .product-section {
+    flex-direction: column; /* Stack elements vertically on small screens */
+    text-align: center; /* Center-align content for consistency */
+  }
+
+  .product-image, .product-info {
+    max-width: 100%; /* Full width for mobile responsiveness */
+  }
+}
+
+
 .contact-content {
   position: relative;
   z-index: 2;
@@ -638,6 +775,81 @@ height: 90%;
   justify-content: center; 
 }
 
+/* Careers Section Styling */
+.careers-section {
+  padding: 40px;
+  background-color: #f1f1f1;
+  color: #0c3e68;
+  text-align: center;
+}
+
+.careers-section h1, .careers-section h2 {
+  font-family: "Poppins", sans-serif;
+  color: #0c3e68;
+}
+
+.careers-section p {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.job-roles ul {
+  list-style: none;
+  padding: 0;
+}
+
+.job-roles li {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.application-form {
+  background-color: white;
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.application-form h2 {
+  font-size: 24px;
+  color: #0c3e68;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #0c3e68;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #12456e;
+}
 
 
 
