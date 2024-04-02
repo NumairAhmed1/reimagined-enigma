@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // typically using a library like PHPMailer.
 
     // Email recipient
-    $to = 'daim.here@gmail.com'; // Corrected email address
+    $to = 'pradipyadav0126@gmail.com'; // Corrected email address
     // Subject of the email
     $subject = 'Application for ' . $position;
     // Construct email body

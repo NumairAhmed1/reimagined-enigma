@@ -587,81 +587,55 @@ justify-content: center;
   }
 }
 
-
-/* moto Section styling */
+/* Moto Section styling */
 .motosection {
   background-color: #f1f1f1;
-  /* padding: 10px 0; */
-  padding-top: 80px;
-  margin-top: 20px;
-
+  padding-top: 20px;
+  padding-bottom: 0px; /* Added padding bottom for spacing */
 }
 
 /* Styling for the container */
 .moto-main-container {
   max-width: 1200px;
-padding: 20px;
+  padding: 20px;
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
 }
-
 
 /* Styling for the introduction text */
 .motosection h1 {
   font-size: 30px;
-  margin-top: -85px;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
   font-family: "Poppins", sans-serif;
-  font-weight: bold
+  font-weight: bold;
+}
 
+.motosection #motoimage img {
+  max-width: 100%;
+  height: auto; /* Changed height to auto for responsive resizing */
+  margin: auto;
+  display: block; /* Added to center the image */
 }
-.motosection #motoimage  img{
-display: flex;
-max-width: 100%;
- position: relative; 
-right: 40px; 
-bottom: 20px;
-height:100%; 
-margin: auto;
-}
+
 .motosection #moto-text-container {
-margin: auto;
-}
-.motosection .motoheadline{
-margin: auto;
-position: relative;
-bottom: 60px;
+  margin-top: 20px; /* Added margin top for spacing */
 }
 
+.motosection .motoheadline {
+  text-align: center; /* Centered the headline */
+}
 
+/* Styling for the features list */
+.motosection ul {
+  padding-left: 0;
+}
 
-.motosection ul li{
- list-style: none;
- position: relative;
- left: -36px;
-padding-left: 22px;
- line-height: 40px;
+.motosection ul li {
+  list-style: none;
+  line-height: 1.6;
 }
-.motosection .fa-shield-check{
- color: #0b6cbb;;
- font-size: 100px;
-}
-.motosection #moto-featurs{
- display: flex;
- color: #2271b1;;
- margin-right: 33px;
 
-}
-.motosection ul li i{
- position: relative;
- left: -10px;
-}
-.motosection ul li, i{
- position: relative;
- right: 42px;
+.motosection ul li i {
+  margin-right: 10px; /* Added margin right for spacing between icon and text */
 }
 
 /* Projects Container to Grid Layout */
@@ -1436,3 +1410,64 @@ form .user-details .input-box{
    max-width: 80%;
   margin: 30px auto;
 }
+
+
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+}
+
+.section-bg {
+  background-color: white;
+}
+
+.section-title {
+  text-align: center;
+  padding: 30px 0;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 0;
+  color: #3b434a;
+  position: relative;
+  z-index: 2;
+}
+
+.section-title span {
+  position: absolute;
+  top: 30px;
+  color: #eef0f2;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  font-weight: 700;
+  font-size: 52px;
+  text-transform: uppercase;
+  line-height: 0;
+}
+
+.section-title p {
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 575px) {
+  .section-title h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .section-title span {
+    font-size: 38px;
+  }
+}
+
